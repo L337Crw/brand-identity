@@ -107,6 +107,52 @@ def init_db():
         sort_order INTEGER DEFAULT 0,
         updated_at TEXT DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS mission_vision (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updated_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS archetype (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updated_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS brand_architecture (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        level TEXT NOT NULL,          -- main / sub_line / product / collab
+        name TEXT NOT NULL,
+        icon TEXT,
+        tagline TEXT,
+        description TEXT NOT NULL,
+        target TEXT,
+        status TEXT DEFAULT 'active', -- active / planned / concept
+        sort_order INTEGER DEFAULT 0,
+        updated_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS brand_story (
+        key TEXT PRIMARY KEY,
+        title TEXT,
+        body TEXT NOT NULL,
+        sort_order INTEGER DEFAULT 0,
+        updated_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS customer_persona (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        age_range TEXT,
+        occupation TEXT,
+        pain_point TEXT,
+        desire TEXT,
+        behavior TEXT,
+        how_we_help TEXT,
+        sort_order INTEGER DEFAULT 0,
+        updated_at TEXT DEFAULT (datetime('now'))
+    );
     """)
 
     # ── 초기 데이터: brand_core ──
@@ -301,6 +347,137 @@ def init_db():
             (key, value, category, desc),
         )
 
+    # ── 초기 데이터: mission_vision ──
+    mv_data = {
+        "mission": "사람이 하지 않아도 되는 일을 자동화해서, 사람이 해야 할 일에 집중할 시간을 돌려드립니다.",
+        "vision": "반복 업무 없는 세상. 기술이 일하고, 사람은 살아가는 세상.",
+        "brand_promise": "당신이 신경 쓰지 않아도 돌아가는 시스템을 만듭니다. 결과만 확인하세요.",
+        "why_we_exist": "매일 같은 일을 반복하느라 정작 중요한 일에 쓸 시간이 없는 사람들을 위해.",
+    }
+    for key, value in mv_data.items():
+        c.execute("INSERT OR REPLACE INTO mission_vision (key, value, updated_at) VALUES (?, ?, datetime('now'))", (key, value))
+
+    # ── 초기 데이터: archetype ──
+    arch_data = {
+        "primary_archetype": "현자 (The Sage)",
+        "primary_desc": "지식과 원칙으로 움직인다. 감정에 흔들리지 않고, 데이터와 규칙이 판단한다. 과장하지 않고 있는 그대로 보여준다.",
+        "secondary_archetype": "창조자 (The Creator)",
+        "secondary_desc": "복잡한 문제를 기술로 풀어낸다. 자동화 시스템을 설계하고 만들어서, 사람이 반복에서 벗어나게 한다.",
+        "shadow": "차갑거나 거만해 보일 수 있음 — '존중' 톤으로 균형. 기술을 내세우지 않고 결과로 보여준다.",
+        "personality_keywords": "담백한, 세련된, 신뢰감, 기술적, 미니멀",
+        "brand_voice_summary": "과장 없이 사실만. 짧고 리듬감 있게. 사용자를 가르치지 않고, 결과로 말한다.",
+    }
+    for key, value in arch_data.items():
+        c.execute("INSERT OR REPLACE INTO archetype (key, value, updated_at) VALUES (?, ?, datetime('now'))", (key, value))
+
+    # ── 초기 데이터: brand_architecture ──
+    ba_data = [
+        # (level, name, icon, tagline, description, target, status, sort_order)
+        ("main", "URSxClaw", "🐻", "반복은 맡기고, 당신은 살아가세요.",
+         "메인 브랜드. 투자 자동화 + 일상 자동화를 아우르는 기술 브랜드 전체를 대표한다.",
+         "전체 고객", "active", 1),
+
+        ("sub_line", "URSx Trade", "📈", "원칙이 감정을 이긴다.",
+         "투자 자동화 라인. 트레이딩 봇, 백테스트, 포트폴리오 관리 등 금융 시장 자동매매 전반.",
+         "투자자 — 시간이 없거나 감정 매매를 끊고 싶은 사람", "active", 10),
+
+        ("sub_line", "URSx Auto", "⚙️", "반복은 기계의 몫이다.",
+         "일상 자동화 라인. 뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송 등 비투자 자동화.",
+         "반복 업무에 지친 직장인, 정보 수집이 일상인 사람", "active", 20),
+
+        ("sub_line", "URSx View", "📊", "지금 필요한 정보만.",
+         "대시보드 / 시각화 라인. 자산 현황, 봇 상태, 자동화 결과를 한눈에 보여주는 인터페이스.",
+         "전체 URSxClaw 사용자", "active", 30),
+
+        ("product", "코인 매매봇", "🪙", "24시간, 쉬지 않고.",
+         "바이낸스 기반 DCA 코인 자동매매. 16종목 동시 운용, 규칙 기반 진입/청산.",
+         "암호화폐 투자자", "active", 11),
+
+        ("product", "글로벌 뉴스봇", "🌍", "세상이 움직이면, 알려드립니다.",
+         "전 세계 주요 뉴스를 실시간 수집, 요약, 텔레그램 전송. Gemini 기반 브리핑.",
+         "글로벌 시장 관심자, 투자자", "active", 21),
+
+        ("product", "메르 블로그봇", "📝", "놓치면 안 되는 글, 알아서 잡습니다.",
+         "메르 블로그 신규 포스팅 감지 → OneNote 자동 저장 + 텔레그램 알림.",
+         "메르 블로그 구독자", "active", 22),
+
+        ("product", "자산평가봇", "💰", "내 자산, 숫자로 보여줍니다.",
+         "은행/증권 자산을 OCR로 캡처, 엑셀 정리, 차트 시각화. 텔레그램 리포트.",
+         "자산 관리가 필요한 개인 투자자", "active", 31),
+
+        ("product", "스케줄봇", "📅", "일정은 봇이 관리합니다.",
+         "승무원 비행 스케줄 OCR 인식 → 구글 캘린더 자동 등록 + 달력 이미지 생성.",
+         "승무원 가족", "active", 23),
+
+        ("concept", "URSx Shield", "🛡️", "지키는 것도 자동화.",
+         "보안 모니터링, VPS 감시, 이상 탐지 자동화 라인. 현재 내부용으로 운용 중.",
+         "인프라 관리자", "planned", 40),
+
+        ("concept", "URSx Agent", "🤖", "에이전트가 판단합니다.",
+         "멀티 에이전트 AI 파이프라인. 여러 AI가 협업해서 복잡한 의사결정을 처리.",
+         "고급 자동화가 필요한 사용자", "planned", 50),
+    ]
+    for level, name, icon, tagline, desc, target, status, order in ba_data:
+        c.execute(
+            "INSERT OR IGNORE INTO brand_architecture (level, name, icon, tagline, description, target, status, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (level, name, icon, tagline, desc, target, status, order),
+        )
+
+    # ── 초기 데이터: brand_story ──
+    story_data = {
+        "origin": (
+            "시작",
+            "매일 같은 일을 반복하면서, 정작 중요한 일에 쓸 시간이 없었습니다.\n차트를 들여다보고, 뉴스를 훑고, 데이터를 정리하고, 알림을 확인하는 일. 하나하나는 사소하지만 쌓이면 하루를 통째로 잡아먹었습니다.\n그래서 직접 만들기 시작했습니다. 반복을 맡길 수 있는 시스템을.",
+            1,
+        ),
+        "turning_point": (
+            "전환점",
+            "처음에는 나 하나 편하자고 만든 봇이었습니다.\n그런데 봇이 24시간 일하는 동안, 저는 처음으로 차트 앞에서 벗어나 다른 일을 할 수 있었습니다.\n이건 나만의 문제가 아니라는 걸 깨달았습니다.",
+            2,
+        ),
+        "now": (
+            "지금",
+            "투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이, 일상에서는 정보를 수집하고 정리하고 알려주는 자동화 시스템이 일합니다.\n24시간, 쉬지 않고, 흔들리지 않고.\n복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요.",
+            3,
+        ),
+        "manifesto": (
+            "선언",
+            "우리는 기술을 자랑하지 않습니다.\n우리는 결과를 보여줍니다.\n당신의 시간은 차트 앞에 묶여 있을 만큼 가볍지 않습니다.\nURSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.",
+            4,
+        ),
+    }
+    for key, (title, body, order) in story_data.items():
+        c.execute(
+            "INSERT OR REPLACE INTO brand_story (key, title, body, sort_order, updated_at) VALUES (?, ?, ?, ?, datetime('now'))",
+            (key, title, body, order),
+        )
+
+    # ── 초기 데이터: customer_persona ──
+    persona_data = [
+        ("바쁜 직장인 투자자", "30~45", "직장인 (IT/금융/전문직)",
+         "퇴근 후 차트 볼 시간이 없어서 기회를 놓침. 감정 매매로 손실 경험.",
+         "신경 안 써도 원칙대로 돌아가는 투자 시스템",
+         "출퇴근 시 텔레그램으로 결과 확인, 주말에 설정 조정",
+         "코인 매매봇이 24시간 규칙 기반 매매. 텔레그램으로 결과만 받아보면 됨.", 1),
+
+        ("정보 과부하 투자자", "25~50", "개인 투자자 / 트레이더",
+         "뉴스, 블로그, 시세를 매일 수동으로 확인하느라 시간 소모. 중요한 정보를 놓칠까 불안.",
+         "중요한 정보만 알아서 걸러서 알려주는 시스템",
+         "아침에 브리핑 확인, 속보 실시간 알림 수신",
+         "글로벌 뉴스봇 + 메르 블로그봇이 자동 수집·요약·알림.", 2),
+
+        ("반복 업무에 지친 사람", "25~40", "사무직 / 프리랜서",
+         "매일 같은 데이터 정리, 리포트 작성, 일정 관리를 수작업으로 처리.",
+         "반복 작업을 자동화해서 창의적인 일에 집중하고 싶음",
+         "자동화된 리포트 확인, 일정 알림 수신",
+         "스케줄봇, 자산평가봇 등이 수작업을 대체.", 3),
+    ]
+    for name, age, occ, pain, desire, behavior, help_, order in persona_data:
+        c.execute(
+            "INSERT OR IGNORE INTO customer_persona (name, age_range, occupation, pain_point, desire, behavior, how_we_help, sort_order) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (name, age, occ, pain, desire, behavior, help_, order),
+        )
+
     conn.commit()
     conn.close()
     print(f"✅ 브랜드 DB 초기화 완료: {DB_PATH}")
@@ -324,7 +501,8 @@ def export_json(output_path: str = None):
     """전체 브랜드 DB를 JSON으로 내보내기"""
     conn = get_conn()
     tables = ["brand_core", "colors", "typography", "copy_blocks",
-              "voice_tone", "design_tokens", "principles", "services", "assets"]
+              "voice_tone", "design_tokens", "principles", "services", "assets",
+              "mission_vision", "archetype", "brand_architecture", "brand_story", "customer_persona"]
     data = {}
     for t in tables:
         try:
@@ -393,6 +571,11 @@ def print_summary():
         "principles": "원칙",
         "services": "서비스",
         "assets": "에셋",
+        "mission_vision": "미션 & 비전",
+        "archetype": "브랜드 원형",
+        "brand_architecture": "브랜드 전개",
+        "brand_story": "브랜드 스토리",
+        "customer_persona": "고객 페르소나",
     }
 
     print("=" * 50)
