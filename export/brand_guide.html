@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>URSxClaw — Brand Identity Guide</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -47,6 +48,7 @@
     box-shadow: var(--card-shadow);
   }
   .theme-toggle:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0,122,255,0.25); }
+  .theme-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
   /* ── 히어로 ── */
   .hero {
@@ -69,7 +71,7 @@
     position: relative;
   }
   .hero h1 .highlight { color: var(--yellow); }
-  .x-mark { color: #FFD60A; font-weight: inherit; }
+  .x-mark { color: var(--yellow); font-weight: inherit; }
   .hero .tagline {
     font-size: clamp(18px, 2.5vw, 24px); color: var(--text2);
     font-weight: 400; position: relative; max-width: 600px;
@@ -199,9 +201,85 @@
   .copy-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
   .copy-body { font-size: 15px; color: var(--text2); line-height: 1.8; white-space: pre-line; }
 
+  /* ── 사이드 네비게이션 ── */
+  .side-nav {
+    position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 90;
+    padding: 16px 0 16px 12px;
+    transition: opacity 300ms ease;
+  }
+  .side-nav a {
+    display: block; font-size: 11px; font-weight: 500; color: var(--text2);
+    text-decoration: none; padding: 6px 12px; border-left: 2px solid transparent;
+    transition: all 200ms ease; white-space: nowrap;
+  }
+  .side-nav a:hover { color: var(--text); border-left-color: var(--blue); }
+  .side-nav a.active { color: var(--blue); border-left-color: var(--blue); font-weight: 600; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+
+  /* ── 유틸리티 클래스 (인라인 스타일 제거용) ── */
+  .subsection-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--text2); }
+  .subsection-title-lg { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+  .subsection-title-sm { font-size: 14px; font-weight: 600; color: var(--text2); margin: 32px 0 16px; }
+  .section-intro { font-size: 15px; color: var(--text2); margin-bottom: 8px; max-width: 640px; }
+  .info-box { margin-top: 32px; padding: 20px; border-radius: 12px; background: var(--bg2); font-size: 14px; color: var(--text2); line-height: 1.6; }
+  .info-box strong { color: var(--text); }
+  .mt-32 { margin-top: 32px; }
+  .ba-line-badge { font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.3px; margin-left: auto; opacity: 0.6; }
+  .ba-line-badge.trade { background: rgba(52,199,89,0.1); color: var(--green); }
+  .ba-line-badge.auto { background: rgba(94,92,230,0.1); color: var(--violet); }
+  .ba-line-badge.view { background: rgba(90,200,250,0.1); color: var(--cyan); }
+
+  /* ── 글라스모피즘 데모 ── */
+  .glass-demo {
+    position: relative; padding: 80px 40px; border-radius: 24px; overflow: hidden;
+    background: linear-gradient(135deg, var(--blue) 0%, var(--violet) 50%, var(--yellow) 100%);
+  }
+  .glass-demo-glow {
+    position: absolute; top: 30px; left: 30px; width: 200px; height: 200px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); filter: blur(40px);
+  }
+  .glass-demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; position: relative; }
+  .glass-card {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;
+  }
+  .glass-card-label { font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px; }
+  .glass-card-value { font-size: 32px; font-weight: 700; font-family: 'SF Mono', monospace; }
+  .glass-card-value small { font-size: 16px; opacity: 0.7; }
+  .glass-card-sub { font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7); }
+
+  /* ── 모바일 하단 TOC ── */
+  .mobile-toc {
+    display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+    background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border); padding: 8px 12px; padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+  .mobile-toc-toggle {
+    position: fixed; bottom: calc(16px + env(safe-area-inset-bottom)); right: 16px; z-index: 91;
+    width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border);
+    background: var(--bg2); cursor: pointer; display: none; align-items: center; justify-content: center;
+    font-size: 18px; box-shadow: var(--card-shadow);
+  }
+  .mobile-toc-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .mobile-toc-inner {
+    display: flex; gap: 6px; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; padding: 4px 0;
+  }
+  .mobile-toc-inner::-webkit-scrollbar { display: none; }
+  .mobile-toc-chip {
+    flex-shrink: 0; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 500;
+    color: var(--text2); text-decoration: none; background: var(--bg2); white-space: nowrap;
+    border: 1px solid var(--border); transition: all 200ms ease;
+  }
+  .mobile-toc-chip:active { transform: scale(0.95); }
+  .mobile-toc-chip.active { color: var(--blue); border-color: var(--blue); font-weight: 600; }
+
   /* ── 클로징 ── */
   .closing {
-    text-align: center; padding: 120px 24px;
+    text-align: center; padding: 72px 24px;
     position: relative; overflow: hidden;
   }
   .closing::before {
@@ -224,7 +302,7 @@
   }
   .symbol-item {
     text-align: center; padding: 24px 12px; border-radius: 16px;
-    cursor: pointer; transition: all 250ms ease; position: relative;
+    transition: transform 250ms ease; position: relative;
   }
   .symbol-item:hover { transform: scale(1.05); }
   .symbol-item img { width: 72px; height: 72px; margin-bottom: 10px; }
@@ -234,9 +312,7 @@
   .symbol-item.on-light { background: #F5F5F7; }
   .symbol-item.on-light .sym-name { color: #1D1D1F; }
   .symbol-item.on-light .sym-hex { color: #86868B; }
-  [data-theme="dark"] .symbol-item.on-light { background: #F5F5F7; }
-  [data-theme="dark"] .symbol-item.on-light .sym-name { color: #1D1D1F; }
-  [data-theme="dark"] .symbol-item.on-light .sym-hex { color: #86868B; }
+  /* on-light는 테마 무관 고정 — 다크 오버라이드 불필요 */
   .symbol-item.recommended::after {
     content: 'PICK'; position: absolute; top: 8px; right: 8px;
     background: var(--blue); color: white; font-size: 9px; font-weight: 700;
@@ -344,6 +420,10 @@
   .persona-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
 
   /* ── 모바일 ── */
+  @media (max-width: 1100px) {
+    .side-nav { display: none; }
+    .mobile-toc-toggle { display: flex; }
+  }
   @media (max-width: 768px) {
     section { padding: 48px 16px; }
     .section-title { font-size: 26px; margin-bottom: 32px; }
@@ -354,14 +434,32 @@
     .ba-lines { grid-template-columns: 1fr; }
     .symbol-showcase { grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .symbol-item img { width: 56px; height: 56px; }
+    .persona-grid { grid-template-columns: 1fr; }
+    .glass-demo { padding: 40px 16px; }
   }
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" onclick="toggleTheme()" title="테마 전환">
-  <span id="themeIcon">☀️</span>
+<button class="theme-toggle" id="themeToggle" title="테마 전환" aria-label="다크/라이트 테마 전환">
+  <span id="themeIcon" aria-hidden="true">☀️</span>
 </button>
+
+<!-- ── 사이드 네비게이션 ── -->
+<nav class="side-nav" id="sideNav">
+  <a href="#sec-symbol">심볼</a>
+  <a href="#sec-mission">미션 & 비전</a>
+  <a href="#sec-story">브랜드 스토리</a>
+  <a href="#sec-archetype">브랜드 성격</a>
+  <a href="#sec-services">서비스</a>
+  <a href="#sec-architecture">브랜드 전개</a>
+  <a href="#sec-persona">고객 페르소나</a>
+  <a href="#sec-principles">원칙</a>
+  <a href="#sec-color">컬러</a>
+  <a href="#sec-typography">타이포</a>
+  <a href="#sec-voice">보이스 & 톤</a>
+  <a href="#sec-material">소재감</a>
+</nav>
 
 <!-- ── 히어로 ── -->
 <div class="hero">
@@ -374,74 +472,72 @@
 <div class="divider"></div>
 
 <!-- ── 심볼 쇼케이스 ── -->
-<section>
+<section id="sec-symbol">
   <div class="section-label">Symbol System</div>
   <h2 class="section-title">심볼 컬러 시스템</h2>
-  <p style="font-size: 15px; color: var(--text2); margin-bottom: 8px; max-width: 640px;">
-    모든 브랜드 컬러로 사용 가능. 배경에 따라 적합한 버전을 선택합니다.
-  </p>
+  <p class="section-intro">모든 브랜드 컬러로 사용 가능. 배경에 따라 적합한 버전을 선택합니다.</p>
 
-  <h3 style="font-size: 14px; font-weight: 600; color: var(--text2); margin: 32px 0 16px;">다크 배경에서</h3>
+  <h3 class="subsection-title-sm">다크 배경에서</h3>
   <div class="symbol-showcase">
     <div class="symbol-item on-dark recommended">
-      <img src="../assets/symbol_ursx_blue.png" alt="URSx Blue">
+      <img src="../assets/symbol_ursx_blue.png" alt="URSx Blue" loading="lazy">
       <div class="sym-name">URSx Blue</div>
       <div class="sym-hex">#007AFF</div>
     </div>
     <div class="symbol-item on-dark">
-      <img src="../assets/symbol_neon_violet.png" alt="Neon Violet">
+      <img src="../assets/symbol_neon_violet.png" alt="Neon Violet" loading="lazy">
       <div class="sym-name">Neon Violet</div>
       <div class="sym-hex">#5E5CE6</div>
     </div>
     <div class="symbol-item on-dark">
-      <img src="../assets/symbol_nano_yellow.png" alt="Nano Yellow">
+      <img src="../assets/symbol_nano_yellow.png" alt="Nano Yellow" loading="lazy">
       <div class="sym-name">Nano Yellow</div>
       <div class="sym-hex">#FFD60A</div>
     </div>
     <div class="symbol-item on-dark">
-      <img src="../assets/symbol_claw_mint.png" alt="Claw Mint">
+      <img src="../assets/symbol_claw_mint.png" alt="Claw Mint" loading="lazy">
       <div class="sym-name">Claw Mint</div>
       <div class="sym-hex">#54CDA5</div>
     </div>
     <div class="symbol-item on-dark">
-      <img src="../assets/symbol_snow_white.png" alt="Snow White">
+      <img src="../assets/symbol_snow_white.png" alt="Snow White" loading="lazy">
       <div class="sym-name">Snow White</div>
       <div class="sym-hex">#F5F5F7</div>
     </div>
   </div>
 
-  <h3 style="font-size: 14px; font-weight: 600; color: var(--text2); margin: 32px 0 16px;">라이트 배경에서</h3>
+  <h3 class="subsection-title-sm">라이트 배경에서</h3>
   <div class="symbol-showcase">
     <div class="symbol-item on-light recommended">
-      <img src="../assets/symbol_ursx_blue.png" alt="URSx Blue">
+      <img src="../assets/symbol_ursx_blue.png" alt="URSx Blue" loading="lazy">
       <div class="sym-name">URSx Blue</div>
       <div class="sym-hex">#007AFF</div>
     </div>
     <div class="symbol-item on-light">
-      <img src="../assets/symbol_neon_violet.png" alt="Neon Violet">
+      <img src="../assets/symbol_neon_violet.png" alt="Neon Violet" loading="lazy">
       <div class="sym-name">Neon Violet</div>
       <div class="sym-hex">#5E5CE6</div>
     </div>
     <div class="symbol-item on-light">
-      <img src="../assets/symbol_ink_black.png" alt="Ink Black">
+      <img src="../assets/symbol_ink_black.png" alt="Ink Black" loading="lazy">
       <div class="sym-name">Ink Black</div>
       <div class="sym-hex">#1D1D1F</div>
     </div>
     <div class="symbol-item on-light">
-      <img src="../assets/symbol_alert_red.png" alt="Alert Red">
+      <img src="../assets/symbol_alert_red.png" alt="Alert Red" loading="lazy">
       <div class="sym-name">Alert Red</div>
       <div class="sym-hex">#FF3B30</div>
     </div>
     <div class="symbol-item on-light">
-      <img src="../assets/symbol_success_green.png" alt="Success Green">
+      <img src="../assets/symbol_success_green.png" alt="Success Green" loading="lazy">
       <div class="sym-name">Success Green</div>
       <div class="sym-hex">#34C759</div>
     </div>
   </div>
 
-  <div style="margin-top: 32px; padding: 20px; border-radius: 12px; background: var(--bg2); font-size: 14px; color: var(--text2); line-height: 1.6;">
-    <strong style="color: var(--text);">사용 규칙:</strong>
-    기본은 <strong style="color: #007AFF;">URSx Blue</strong>.
+  <div class="info-box">
+    <strong>사용 규칙:</strong>
+    기본은 <strong style="color: var(--blue);">URSx Blue</strong>.
     다크 배경 단색 인쇄 시 <strong>Snow White</strong>,
     라이트 배경 단색 인쇄 시 <strong>Ink Black</strong>.
     서브라인별 강조가 필요할 때만 다른 색상 허용.
@@ -451,7 +547,7 @@
 <div class="divider"></div>
 
 <!-- ── 미션 & 비전 ── -->
-<section>
+<section id="sec-mission">
   <div class="section-label">Mission & Vision</div>
   <h2 class="section-title">존재 이유</h2>
   <div class="mv-grid">
@@ -465,7 +561,7 @@
     </div>
   </div>
   <div class="promise-card">
-    <div class="mv-label" style="color: var(--violet); text-align: center;">Brand Promise</div>
+    <div class="mv-label" style="color:var(--violet);text-align:center;">Brand Promise</div>
     <div class="promise-text">당신이 신경 쓰지 않아도 돌아가는 시스템을 만듭니다.<br>결과만 확인하세요.</div>
   </div>
 </section>
@@ -473,33 +569,34 @@
 <div class="divider"></div>
 
 <!-- ── 브랜드 스토리 ── -->
-<section>
+<section id="sec-story">
   <div class="section-label">Brand Story</div>
   <h2 class="section-title">우리의 이야기</h2>
   <div class="story-timeline">
     <div class="story-item">
-      <div class="story-dot"></div>
+      <div class="story-dot" aria-hidden="true"></div>
       <div class="story-phase">시작</div>
       <div class="story-body">매일 같은 일을 반복하면서, 정작 중요한 일에 쓸 시간이 없었습니다.
 차트를 들여다보고, 뉴스를 훑고, 데이터를 정리하고, 알림을 확인하는 일. 하나하나는 사소하지만 쌓이면 하루를 통째로 잡아먹었습니다.
 그래서 직접 만들기 시작했습니다. 반복을 맡길 수 있는 시스템을.</div>
     </div>
     <div class="story-item">
-      <div class="story-dot"></div>
+      <div class="story-dot" aria-hidden="true"></div>
       <div class="story-phase">전환점</div>
       <div class="story-body">처음에는 나 하나 편하자고 만든 봇이었습니다.
 그런데 봇이 24시간 일하는 동안, 저는 처음으로 차트 앞에서 벗어나 다른 일을 할 수 있었습니다.
 이건 나만의 문제가 아니라는 걸 깨달았습니다.</div>
     </div>
     <div class="story-item">
-      <div class="story-dot"></div>
+      <div class="story-dot" aria-hidden="true"></div>
       <div class="story-phase">지금</div>
-      <div class="story-body">투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이, 일상에서는 정보를 수집하고 정리하고 알려주는 자동화 시스템이 일합니다.
+      <div class="story-body">투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이, 일상에서는 뉴스를 수집하고 스케줄을 정리하고 리포트를 만들어주는 자동화 시스템이 일합니다.
+영상 한 편을 만드는 것도, 블로그를 감시하는 것도, 자산을 정리하는 것도 — 전부 시스템의 몫입니다.
 24시간, 쉬지 않고, 흔들리지 않고.
 복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요.</div>
     </div>
     <div class="story-item">
-      <div class="story-dot"></div>
+      <div class="story-dot" aria-hidden="true"></div>
       <div class="story-phase">선언</div>
       <div class="story-body">우리는 기술을 자랑하지 않습니다.
 우리는 결과를 보여줍니다.
@@ -512,7 +609,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 브랜드 원형 ── -->
-<section>
+<section id="sec-archetype">
   <div class="section-label">Brand Archetype</div>
   <h2 class="section-title">브랜드 성격</h2>
   <div class="arch-grid">
@@ -527,40 +624,16 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="arch-desc">복잡한 문제를 기술로 풀어낸다. 자동화 시스템을 설계하고 만들어서, 사람이 반복에서 벗어나게 한다.</div>
     </div>
   </div>
-  <div style="margin-top: 24px; padding: 20px; border-radius: 12px; background: var(--bg2); font-size: 14px; color: var(--text2); line-height: 1.6;">
-    <strong style="color: var(--text);">균형점:</strong> 차갑거나 거만해 보일 수 있음 — '존중' 톤으로 균형. 기술을 내세우지 않고 결과로 보여준다.
+  <div class="info-box">
+    <strong>균형점:</strong> 차갑거나 거만해 보일 수 있음 — '존중' 톤으로 균형. 기술을 내세우지 않고 결과로 보여준다.
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ── About ── -->
-<section>
-  <div class="section-label">About Us</div>
-  <h2 class="section-title">우리는 한 가지 질문에서 시작했습니다.</h2>
-  <div class="about-text">
-    <p class="opening">"매일 같은 일을 반복하면서, 정작 중요한 일에 쓸 시간은 왜 늘 부족할까?"</p>
-    <p style="margin-top: 16px;">
-      차트를 들여다보고, 뉴스를 훑고, 데이터를 정리하고, 알림을 확인하는 일.
-      하나하나는 사소하지만, 쌓이면 하루를 통째로 잡아먹습니다.
-      URSxClaw는 이 반복의 무게를 기술로 덜어드립니다.
-    </p>
-    <p style="margin-top: 16px;">
-      투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이,
-      일상에서는 정보를 수집하고 정리하고 알려주는 자동화 시스템이 여러분 대신 일합니다.
-      24시간, 쉬지 않고, 흔들리지 않고.
-    </p>
-    <p style="margin-top: 16px;">
-      복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요.
-      나머지는 저희가 알아서 합니다.
-    </p>
-  </div>
-</section>
 
 <div class="divider"></div>
 
 <!-- ── 서비스 ── -->
-<section>
+<section id="sec-services">
   <div class="section-label">What We Do</div>
   <h2 class="section-title">URSxClaw가 하는 일</h2>
   <div class="services-grid">
@@ -588,7 +661,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 브랜드 전개 ── -->
-<section>
+<section id="sec-architecture">
   <div class="section-label">Brand Architecture</div>
   <h2 class="section-title">브랜드 전개</h2>
 
@@ -600,7 +673,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   </div>
 
   <!-- 서브 라인 -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--text2);">서브 라인</h3>
+  <h3 class="subsection-title">서브 라인</h3>
   <div class="ba-lines">
     <div class="ba-line">
       <div class="ba-line-header">
@@ -635,12 +708,13 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   </div>
 
   <!-- 제품 -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: var(--text2);">제품</h3>
+  <h3 class="subsection-title">제품</h3>
   <div class="ba-lines">
     <div class="ba-line">
       <div class="ba-line-header">
         <div class="ba-line-icon trade">₿</div>
         <div class="ba-line-name">Coin Trader</div>
+        <span class="ba-line-badge trade">Trade</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">24/7, Never Sleeps.</div>
@@ -650,6 +724,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-header">
         <div class="ba-line-icon trade">US</div>
         <div class="ba-line-name">US Market Bot</div>
+        <span class="ba-line-badge trade">Trade</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">Rules over emotions, across time zones.</div>
@@ -659,6 +734,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-header">
         <div class="ba-line-icon trade">KR</div>
         <div class="ba-line-name">KR Market Bot</div>
+        <span class="ba-line-badge trade">Trade</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">국장도 원칙대로.</div>
@@ -668,6 +744,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-header">
         <div class="ba-line-icon auto">◉</div>
         <div class="ba-line-name">Global Wire</div>
+        <span class="ba-line-badge auto">Auto</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">The world moves. You get notified.</div>
@@ -677,6 +754,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-header">
         <div class="ba-line-icon auto">⊞</div>
         <div class="ba-line-name">Blog Catcher</div>
+        <span class="ba-line-badge auto">Auto</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">Never miss what matters.</div>
@@ -686,6 +764,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-header">
         <div class="ba-line-icon view">∑</div>
         <div class="ba-line-name">Asset Pulse</div>
+        <span class="ba-line-badge view">View</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">Your wealth, at a glance.</div>
@@ -695,17 +774,28 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-header">
         <div class="ba-line-icon auto">▦</div>
         <div class="ba-line-name">Schedule Craft</div>
+        <span class="ba-line-badge auto">Auto</span>
         <span class="ba-status active">Active</span>
       </div>
       <div class="ba-line-tagline">Capture. Design. Share.</div>
       <div class="ba-line-desc">비행 스케줄 OCR 인식 → 구글 캘린더 자동 등록 + 달력 이미지 디자인 → 지인 전송용 가공.</div>
     </div>
+    <div class="ba-line">
+      <div class="ba-line-header">
+        <div class="ba-line-icon auto">▶</div>
+        <div class="ba-line-name">Video Factory</div>
+        <span class="ba-line-badge auto">Auto</span>
+        <span class="ba-status planned">Planned</span>
+      </div>
+      <div class="ba-line-tagline">From script to screen, hands-free.</div>
+      <div class="ba-line-desc">주제 선정 → 대본 생성 → 음성 합성 → 영상 편집 → 썸네일 제작 → 유튜브 업로드까지 전 과정 자동화.</div>
+    </div>
   </div>
 
   <!-- 예정 라인 -->
-  <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; margin-top: 32px; color: var(--text2);">계획 중</h3>
+  <h3 class="subsection-title mt-32">계획 중</h3>
   <div class="ba-lines">
-    <div class="ba-line" style="opacity: 0.7;">
+    <div class="ba-line" style="opacity:0.7;">
       <div class="ba-line-header">
         <div class="ba-line-icon shield">⬡</div>
         <div class="ba-line-name">URSx Shield</div>
@@ -714,7 +804,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
       <div class="ba-line-tagline">Automate the defense.</div>
       <div class="ba-line-desc">보안 모니터링, VPS 감시, 이상 탐지 자동화 라인.</div>
     </div>
-    <div class="ba-line" style="opacity: 0.7;">
+    <div class="ba-line" style="opacity:0.7;">
       <div class="ba-line-header">
         <div class="ba-line-icon agent">⬢</div>
         <div class="ba-line-name">URSx Agent</div>
@@ -729,7 +819,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 고객 페르소나 ── -->
-<section>
+<section id="sec-persona">
   <div class="section-label">Customer Persona</div>
   <h2 class="section-title">우리의 고객</h2>
   <div class="persona-grid">
@@ -787,26 +877,26 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 원칙 ── -->
-<section>
+<section id="sec-principles">
   <div class="section-label">Principles</div>
   <h2 class="section-title">우리의 원칙</h2>
   <div class="principles-list">
     <div class="principle-item">
-      <div class="principle-num">01</div>
+      <div class="principle-num" aria-hidden="true">01</div>
       <div>
         <div class="principle-title">원칙이 감정을 이긴다</div>
         <div class="principle-desc">시장이 흔들려도 봇은 흔들리지 않습니다. 미리 세운 규칙이 매 순간의 판단을 대신합니다.</div>
       </div>
     </div>
     <div class="principle-item">
-      <div class="principle-num">02</div>
+      <div class="principle-num" aria-hidden="true">02</div>
       <div>
         <div class="principle-title">반복은 기계의 몫이다</div>
         <div class="principle-desc">사람은 판단하고 결정하는 일에 집중해야 합니다. 단순 반복은 시스템에게 넘기세요.</div>
       </div>
     </div>
     <div class="principle-item">
-      <div class="principle-num">03</div>
+      <div class="principle-num" aria-hidden="true">03</div>
       <div>
         <div class="principle-title">쉬워야 쓸 수 있다</div>
         <div class="principle-desc">기술은 복잡해도 경험은 단순해야 합니다. 결과가 눈에 바로 들어오는 것, 그게 우리의 기준입니다.</div>
@@ -818,11 +908,11 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 컬러 팔레트 ── -->
-<section>
+<section id="sec-color">
   <div class="section-label">Color Palette</div>
   <h2 class="section-title">컬러 시스템</h2>
 
-  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">브랜드 컬러</h3>
+  <h3 class="subsection-title-lg">브랜드 컬러</h3>
   <div class="palette-grid" style="margin-bottom: 48px;">
     <div class="color-card">
       <div class="color-swatch" style="background: #007AFF;"></div>
@@ -858,7 +948,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
   </div>
 
-  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">시맨틱 컬러</h3>
+  <h3 class="subsection-title-lg">시맨틱 컬러</h3>
   <div class="palette-grid" style="margin-bottom: 48px;">
     <div class="color-card">
       <div class="color-swatch" style="background: #34C759;"></div>
@@ -894,10 +984,10 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
   </div>
 
-  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">배경 (라이트 / 다크)</h3>
+  <h3 class="subsection-title-lg">배경 (라이트 / 다크)</h3>
   <div class="palette-grid">
     <div class="color-card">
-      <div class="color-swatch" style="background: #FFFFFF; border-bottom: 1px solid #eee;"></div>
+      <div class="color-swatch" style="background: #FFFFFF; border-bottom: 1px solid var(--border);"></div>
       <div class="color-info">
         <div class="color-name">Pure White</div>
         <div class="color-hex">#FFFFFF</div>
@@ -934,7 +1024,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 타이포그래피 ── -->
-<section>
+<section id="sec-typography">
   <div class="section-label">Typography</div>
   <h2 class="section-title">타이포그래피 시스템</h2>
 
@@ -989,7 +1079,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 보이스 & 톤 ── -->
-<section>
+<section id="sec-voice">
   <div class="section-label">Voice & Tone</div>
   <h2 class="section-title">보이스 & 톤 가이드</h2>
   <div class="voice-grid">
@@ -1059,31 +1149,26 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 <div class="divider"></div>
 
 <!-- ── 글라스모피즘 데모 ── -->
-<section>
+<section id="sec-material">
   <div class="section-label">Material</div>
   <h2 class="section-title">글라스모피즘 소재감</h2>
-  <div style="position: relative; padding: 80px 40px; border-radius: 24px; overflow: hidden;
-    background: linear-gradient(135deg, #007AFF 0%, #5E5CE6 50%, #FFD60A 100%);">
-    <div style="position: absolute; top: 30px; left: 30px; width: 200px; height: 200px; border-radius: 50%;
-      background: rgba(255,255,255,0.15); filter: blur(40px);"></div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; position: relative;">
-      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;">
-        <div style="font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px;">총 자산</div>
-        <div style="font-size: 32px; font-weight: 700; font-family: 'SF Mono', monospace;">₩12,345,678</div>
-        <div style="font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7);">+2.4% 오늘</div>
+  <div class="glass-demo">
+    <div class="glass-demo-glow" aria-hidden="true"></div>
+    <div class="glass-demo-grid">
+      <div class="glass-card">
+        <div class="glass-card-label">총 자산</div>
+        <div class="glass-card-value">₩12,345,678</div>
+        <div class="glass-card-sub">+2.4% 오늘</div>
       </div>
-      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;">
-        <div style="font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px;">활성 봇</div>
-        <div style="font-size: 32px; font-weight: 700;">6<span style="font-size: 16px; opacity: 0.7;"> / 6</span></div>
-        <div style="font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7);">모두 정상 가동 중</div>
+      <div class="glass-card">
+        <div class="glass-card-label">활성 봇</div>
+        <div class="glass-card-value">6<small> / 6</small></div>
+        <div class="glass-card-sub">모두 정상 가동 중</div>
       </div>
-      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;">
-        <div style="font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px;">오늘 매매</div>
-        <div style="font-size: 32px; font-weight: 700;">14<span style="font-size: 16px; opacity: 0.7;"> 건</span></div>
-        <div style="font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7);">승률 78.6%</div>
+      <div class="glass-card">
+        <div class="glass-card-label">오늘 매매</div>
+        <div class="glass-card-value">14<small> 건</small></div>
+        <div class="glass-card-sub">승률 78.6%</div>
       </div>
     </div>
   </div>
@@ -1099,14 +1184,40 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   </div>
 </div>
 
+<!-- ── 모바일 TOC ── -->
+<button class="mobile-toc-toggle" id="mobileTocToggle" aria-label="목차 열기" aria-hidden="true">☰</button>
+<nav class="mobile-toc" id="mobileToc" aria-label="모바일 목차">
+  <div class="mobile-toc-inner">
+    <a href="#sec-symbol" class="mobile-toc-chip">심볼</a>
+    <a href="#sec-mission" class="mobile-toc-chip">미션</a>
+    <a href="#sec-story" class="mobile-toc-chip">스토리</a>
+    <a href="#sec-archetype" class="mobile-toc-chip">성격</a>
+    <a href="#sec-services" class="mobile-toc-chip">서비스</a>
+    <a href="#sec-architecture" class="mobile-toc-chip">전개</a>
+    <a href="#sec-persona" class="mobile-toc-chip">페르소나</a>
+    <a href="#sec-principles" class="mobile-toc-chip">원칙</a>
+    <a href="#sec-color" class="mobile-toc-chip">컬러</a>
+    <a href="#sec-typography" class="mobile-toc-chip">타이포</a>
+    <a href="#sec-voice" class="mobile-toc-chip">보이스</a>
+    <a href="#sec-material" class="mobile-toc-chip">소재감</a>
+  </div>
+</nav>
+
 <footer>
+  <div style="font-size:11px;color:var(--text2);margin-bottom:8px;opacity:0.6;">나노바나나 — URSxClaw 창업자 코드네임. 브랜드의 내부 정체성이자 디자인 철학의 별칭.</div>
   URSxClaw Brand Identity DB v2.0 — 나노바나나 스타일 · 2026
 </footer>
 
 <script>
-// 모든 URSxClaw / URSx 텍스트의 x를 노랑으로
 document.addEventListener('DOMContentLoaded', () => {
-  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  // URSx 텍스트의 x를 노랑으로 (script/style 제외)
+  const content = document.querySelector('.hero')?.parentElement || document.body;
+  const walk = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => {
+      const tag = n.parentNode?.tagName;
+      return (tag === 'SCRIPT' || tag === 'STYLE') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+    }
+  });
   const textNodes = [];
   while (walk.nextNode()) textNodes.push(walk.currentNode);
   textNodes.forEach(node => {
@@ -1116,11 +1227,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const frag = document.createDocumentFragment();
     parts.forEach(part => {
       if (part === 'URSx') {
-        const urs = document.createTextNode('URS');
+        frag.appendChild(document.createTextNode('URS'));
         const x = document.createElement('span');
         x.className = 'x-mark';
         x.textContent = 'x';
-        frag.appendChild(urs);
         frag.appendChild(x);
       } else {
         frag.appendChild(document.createTextNode(part));
@@ -1128,19 +1238,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     node.parentNode.replaceChild(frag, node);
   });
-});
 
-function toggleTheme() {
-  const html = document.documentElement;
-  const icon = document.getElementById('themeIcon');
-  if (html.getAttribute('data-theme') === 'dark') {
-    html.setAttribute('data-theme', 'light');
-    icon.textContent = '🌙';
-  } else {
-    html.setAttribute('data-theme', 'dark');
-    icon.textContent = '☀️';
+  // 테마 토글 (onclick 제거 → addEventListener)
+  document.getElementById('themeToggle')?.addEventListener('click', () => {
+    const html = document.documentElement;
+    const icon = document.getElementById('themeIcon');
+    if (html.getAttribute('data-theme') === 'dark') {
+      html.setAttribute('data-theme', 'light');
+      icon.textContent = '🌙';
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent = '☀️';
+    }
+  });
+
+  // 사이드 네비게이션 + 모바일 TOC 스크롤 스파이
+  const sideNav = document.getElementById('sideNav');
+  const mobileToc = document.getElementById('mobileToc');
+  const mobileTocToggle = document.getElementById('mobileTocToggle');
+  const allNavLinks = [
+    ...sideNav?.querySelectorAll('a') || [],
+    ...mobileToc?.querySelectorAll('a') || []
+  ];
+  const sideLinks = sideNav?.querySelectorAll('a') || [];
+  const mobileChips = mobileToc?.querySelectorAll('a') || [];
+  const sections = Array.from(sideLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+  // 스크롤 스파이
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        allNavLinks.forEach(a => {
+          a.classList.remove('active');
+          a.removeAttribute('aria-current');
+        });
+        const id = entry.target.id;
+        [sideNav, mobileToc].forEach(nav => {
+          const active = nav?.querySelector(`a[href="#${id}"]`);
+          if (active) {
+            active.classList.add('active');
+            active.setAttribute('aria-current', 'page');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(sec => observer.observe(sec));
+
+  // smooth scroll (사이드 + 모바일 공용)
+  allNavLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (mobileToc) mobileToc.style.display = 'none';
+      tocOpen = false;
+    });
+  });
+
+  // 히어로 지나기 전까지 사이드 네비 숨기기
+  const hero = document.querySelector('.hero');
+  if (hero && sideNav) {
+    const heroObs = new IntersectionObserver(([entry]) => {
+      sideNav.style.opacity = entry.isIntersecting ? '0' : '1';
+      sideNav.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+    }, { threshold: 0.3 });
+    heroObs.observe(hero);
   }
-}
+
+  // 모바일 TOC 토글
+  let tocOpen = false;
+  mobileTocToggle?.addEventListener('click', () => {
+    tocOpen = !tocOpen;
+    if (mobileToc) mobileToc.style.display = tocOpen ? 'block' : 'none';
+    mobileTocToggle.setAttribute('aria-label', tocOpen ? '목차 닫기' : '목차 열기');
+  });
+});
 </script>
 </body>
 </html>
