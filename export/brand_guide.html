@@ -69,6 +69,7 @@
     position: relative;
   }
   .hero h1 .highlight { color: var(--yellow); }
+  .x-mark { color: #FFD60A; font-weight: inherit; }
   .hero .tagline {
     font-size: clamp(18px, 2.5vw, 24px); color: var(--text2);
     font-weight: 400; position: relative; max-width: 600px;
@@ -1064,6 +1065,32 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
 </footer>
 
 <script>
+// 모든 URSxClaw / URSx 텍스트의 x를 노랑으로
+document.addEventListener('DOMContentLoaded', () => {
+  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  while (walk.nextNode()) textNodes.push(walk.currentNode);
+  textNodes.forEach(node => {
+    if (!node.textContent.includes('URSx')) return;
+    const parts = node.textContent.split(/(URSx)/);
+    if (parts.length <= 1) return;
+    const frag = document.createDocumentFragment();
+    parts.forEach(part => {
+      if (part === 'URSx') {
+        const urs = document.createTextNode('URS');
+        const x = document.createElement('span');
+        x.className = 'x-mark';
+        x.textContent = 'x';
+        frag.appendChild(urs);
+        frag.appendChild(x);
+      } else {
+        frag.appendChild(document.createTextNode(part));
+      }
+    });
+    node.parentNode.replaceChild(frag, node);
+  });
+});
+
 function toggleTheme() {
   const html = document.documentElement;
   const icon = document.getElementById('themeIcon');
