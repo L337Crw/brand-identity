@@ -225,7 +225,11 @@
   .symbol-item .sym-hex { font-size: 11px; font-family: 'SF Mono', monospace; color: var(--text2); }
   .symbol-item.on-dark { background: var(--bg3); }
   .symbol-item.on-light { background: #F5F5F7; }
-  [data-theme="dark"] .symbol-item.on-light { background: #2C2C2E; }
+  .symbol-item.on-light .sym-name { color: #1D1D1F; }
+  .symbol-item.on-light .sym-hex { color: #86868B; }
+  [data-theme="dark"] .symbol-item.on-light { background: #F5F5F7; }
+  [data-theme="dark"] .symbol-item.on-light .sym-name { color: #1D1D1F; }
+  [data-theme="dark"] .symbol-item.on-light .sym-hex { color: #86868B; }
   .symbol-item.recommended::after {
     content: 'PICK'; position: absolute; top: 8px; right: 8px;
     background: var(--blue); color: white; font-size: 9px; font-weight: 700;
@@ -393,27 +397,27 @@
   <div class="symbol-showcase">
     <div class="symbol-item on-light recommended">
       <img src="../assets/symbol_ursx_blue.png" alt="URSx Blue">
-      <div class="sym-name" style="color: #1D1D1F;">URSx Blue</div>
+      <div class="sym-name">URSx Blue</div>
       <div class="sym-hex">#007AFF</div>
     </div>
     <div class="symbol-item on-light">
       <img src="../assets/symbol_neon_violet.png" alt="Neon Violet">
-      <div class="sym-name" style="color: #1D1D1F;">Neon Violet</div>
+      <div class="sym-name">Neon Violet</div>
       <div class="sym-hex">#5E5CE6</div>
     </div>
     <div class="symbol-item on-light">
       <img src="../assets/symbol_ink_black.png" alt="Ink Black">
-      <div class="sym-name" style="color: #1D1D1F;">Ink Black</div>
+      <div class="sym-name">Ink Black</div>
       <div class="sym-hex">#1D1D1F</div>
     </div>
     <div class="symbol-item on-light">
       <img src="../assets/symbol_alert_red.png" alt="Alert Red">
-      <div class="sym-name" style="color: #1D1D1F;">Alert Red</div>
+      <div class="sym-name">Alert Red</div>
       <div class="sym-hex">#FF3B30</div>
     </div>
     <div class="symbol-item on-light">
       <img src="../assets/symbol_success_green.png" alt="Success Green">
-      <div class="sym-name" style="color: #1D1D1F;">Success Green</div>
+      <div class="sym-name">Success Green</div>
       <div class="sym-hex">#34C759</div>
     </div>
   </div>
