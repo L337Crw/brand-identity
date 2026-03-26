@@ -130,7 +130,14 @@
     box-shadow: var(--card-shadow); transition: all 300ms ease;
   }
   .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
-  .service-icon { font-size: 36px; margin-bottom: 16px; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 14px; margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700;
+  }
+  .service-icon.si-trade { background: rgba(52,199,89,0.1); color: var(--green); }
+  .service-icon.si-auto { background: rgba(94,92,230,0.1); color: var(--violet); }
+  .service-icon.si-view { background: rgba(90,200,250,0.1); color: var(--cyan); }
   .service-name { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
   .service-headline { font-size: 14px; color: var(--text); opacity: 0.7; margin-bottom: 12px; font-style: italic; }
   .service-desc { font-size: 15px; color: var(--text2); line-height: 1.6; }
@@ -303,7 +310,17 @@
   }
   .ba-line:hover { border-color: var(--blue); }
   .ba-line-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .ba-line-icon { font-size: 28px; }
+  .ba-line-icon {
+    font-size: 16px; width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    background: rgba(0,122,255,0.1); color: var(--blue); font-weight: 700;
+  }
+  .ba-line-icon.trade { background: rgba(52,199,89,0.1); color: var(--green); }
+  .ba-line-icon.auto { background: rgba(94,92,230,0.1); color: var(--violet); }
+  .ba-line-icon.view { background: rgba(90,200,250,0.1); color: var(--cyan); }
+  .ba-line-icon.warn { background: rgba(255,149,0,0.1); color: var(--orange); }
+  .ba-line-icon.shield { background: rgba(255,59,48,0.1); color: var(--red); }
+  .ba-line-icon.agent { background: rgba(255,214,10,0.1); color: var(--yellow); }
   .ba-line-name { font-size: 18px; font-weight: 600; }
   .ba-line-tagline { font-size: 13px; color: var(--text); opacity: 0.7; margin-bottom: 8px; font-style: italic; }
   .ba-line-desc { font-size: 14px; color: var(--text2); line-height: 1.5; }
@@ -548,19 +565,19 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   <h2 class="section-title">URSxClaw가 하는 일</h2>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">📈</div>
+      <div class="service-icon si-trade">◆</div>
       <div class="service-name">자동 투자</div>
       <div class="service-headline">잠든 사이에도, 일하는 동안에도.</div>
       <div class="service-desc">검증된 전략 기반의 트레이딩 봇이 시장을 모니터링하고, 정해진 규칙에 따라 매매합니다.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">⚙️</div>
+      <div class="service-icon si-auto">⟳</div>
       <div class="service-name">일상 자동화</div>
       <div class="service-headline">반복 작업을 시스템이 대신합니다.</div>
       <div class="service-desc">뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송. 매일 손으로 하던 반복 작업을 시스템이 대신합니다.</div>
     </div>
     <div class="service-card">
-      <div class="service-icon">📊</div>
+      <div class="service-icon si-view">◫</div>
       <div class="service-name">한눈에 보는 대시보드</div>
       <div class="service-headline">지금 필요한 정보만.</div>
       <div class="service-desc">내 자산과 자동화 현황을 깔끔한 화면 하나로 확인합니다. 복잡한 지표 대신, 지금 필요한 정보만.</div>
@@ -587,7 +604,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   <div class="ba-lines">
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">📈</div>
+        <div class="ba-line-icon trade">◆</div>
         <div class="ba-line-name">URSx Trade</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -597,7 +614,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">⚙️</div>
+        <div class="ba-line-icon auto">⟳</div>
         <div class="ba-line-name">URSx Auto</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -607,7 +624,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">📊</div>
+        <div class="ba-line-icon view">◫</div>
         <div class="ba-line-name">URSx View</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -622,7 +639,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   <div class="ba-lines">
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">🪙</div>
+        <div class="ba-line-icon trade">₿</div>
         <div class="ba-line-name">Coin Trader</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -631,7 +648,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">🇺🇸</div>
+        <div class="ba-line-icon trade">US</div>
         <div class="ba-line-name">US Market Bot</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -640,7 +657,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">🇰🇷</div>
+        <div class="ba-line-icon trade">KR</div>
         <div class="ba-line-name">KR Market Bot</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -649,7 +666,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">🌍</div>
+        <div class="ba-line-icon auto">◉</div>
         <div class="ba-line-name">Global Wire</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -658,7 +675,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">📝</div>
+        <div class="ba-line-icon auto">⊞</div>
         <div class="ba-line-name">Blog Catcher</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -667,7 +684,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">💰</div>
+        <div class="ba-line-icon view">∑</div>
         <div class="ba-line-name">Asset Pulse</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -676,7 +693,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line">
       <div class="ba-line-header">
-        <div class="ba-line-icon">📅</div>
+        <div class="ba-line-icon auto">▦</div>
         <div class="ba-line-name">Schedule Craft</div>
         <span class="ba-status active">Active</span>
       </div>
@@ -690,7 +707,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
   <div class="ba-lines">
     <div class="ba-line" style="opacity: 0.7;">
       <div class="ba-line-header">
-        <div class="ba-line-icon">🛡️</div>
+        <div class="ba-line-icon shield">⬡</div>
         <div class="ba-line-name">URSx Shield</div>
         <span class="ba-status planned">Planned</span>
       </div>
@@ -699,7 +716,7 @@ URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</div>
     </div>
     <div class="ba-line" style="opacity: 0.7;">
       <div class="ba-line-header">
-        <div class="ba-line-icon">🤖</div>
+        <div class="ba-line-icon agent">⬢</div>
         <div class="ba-line-name">URSx Agent</div>
         <span class="ba-status planned">Planned</span>
       </div>
