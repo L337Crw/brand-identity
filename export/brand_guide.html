@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URSxClaw — Brand Identity Guide</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FFFFFF; --bg2: #F5F5F7; --bg3: #F2F2F7;
+    --text: #1D1D1F; --text2: #86868B;
+    --border: #D1D1D6;
+    --blue: #007AFF; --violet: #5E5CE6; --yellow: #FFD60A;
+    --green: #34C759; --red: #FF3B30; --orange: #FF9500; --cyan: #5AC8FA;
+    --glass-bg: rgba(255,255,255,0.72);
+    --glass-border: rgba(255,255,255,0.18);
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  [data-theme="dark"] {
+    --bg: #000000; --bg2: #1C1C1E; --bg3: #2C2C2E;
+    --text: #F5F5F7; --text2: #98989D;
+    --border: #38383A;
+    --glass-bg: rgba(28,28,30,0.72);
+    --glass-border: rgba(255,255,255,0.08);
+    --card-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  body {
+    font-family: 'Pretendard Variable', -apple-system, 'SF Pro Text', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── 테마 토글 ── */
+  .theme-toggle {
+    position: fixed; top: 24px; right: 24px; z-index: 100;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--bg2); border: 1px solid var(--border);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; transition: all 250ms ease;
+    box-shadow: var(--card-shadow);
+  }
+  .theme-toggle:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0,122,255,0.25); }
+
+  /* ── 히어로 ── */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 48px 24px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(0,122,255,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(255,214,10,0.06) 0%, transparent 50%);
+  }
+  .hero-brand {
+    font-size: 14px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 24px; position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 64px); font-weight: 700;
+    line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 .highlight { color: var(--yellow); }
+  .hero .tagline {
+    font-size: clamp(18px, 2.5vw, 24px); color: var(--text2);
+    font-weight: 400; position: relative; max-width: 600px;
+  }
+
+  /* ── 섹션 공통 ── */
+  section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 13px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 34px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 48px;
+  }
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 0 auto;
+  }
+
+  /* ── About ── */
+  .about-text {
+    font-size: 17px; line-height: 1.8; color: var(--text2);
+    max-width: 720px;
+  }
+  .about-text .opening {
+    font-size: 20px; color: var(--text); font-weight: 500; margin-bottom: 16px;
+  }
+
+  /* ── 컬러 팔레트 ── */
+  .palette-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+  .color-card {
+    border-radius: 16px; overflow: hidden;
+    background: var(--bg2); box-shadow: var(--card-shadow);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+  }
+  .color-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .color-swatch { height: 100px; width: 100%; }
+  .color-info { padding: 12px 14px; }
+  .color-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .color-hex { font-size: 12px; font-family: 'SF Mono', 'JetBrains Mono', monospace; color: var(--text2); }
+  .color-role { font-size: 11px; color: var(--text2); margin-top: 4px; }
+
+  /* ── 타이포 ── */
+  .type-specimen { margin-bottom: 32px; padding: 24px; border-radius: 16px; background: var(--bg2); }
+  .type-label { font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .type-meta { font-size: 12px; color: var(--text2); font-family: 'SF Mono', monospace; margin-top: 8px; }
+
+  /* ── 서비스 카드 ── */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .service-card {
+    padding: 32px; border-radius: 16px;
+    background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--card-shadow); transition: all 300ms ease;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.15); }
+  .service-icon { font-size: 36px; margin-bottom: 16px; }
+  .service-name { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .service-headline { font-size: 14px; color: var(--blue); margin-bottom: 12px; }
+  .service-desc { font-size: 15px; color: var(--text2); line-height: 1.6; }
+
+  /* ── 원칙 ── */
+  .principles-list { display: flex; flex-direction: column; gap: 24px; }
+  .principle-item {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 24px; border-radius: 16px; background: var(--bg2);
+  }
+  .principle-num {
+    font-size: 48px; font-weight: 700; color: var(--yellow);
+    line-height: 1; min-width: 60px; text-align: center;
+    font-family: 'SF Mono', monospace;
+  }
+  .principle-title { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .principle-desc { font-size: 15px; color: var(--text2); line-height: 1.6; }
+
+  /* ── 보이스 & 톤 ── */
+  .voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .voice-card { padding: 24px; border-radius: 16px; background: var(--bg2); }
+  .voice-attr { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .voice-desc { font-size: 14px; color: var(--text2); margin-bottom: 16px; }
+  .voice-example { padding: 12px 16px; border-radius: 12px; font-size: 14px; margin-bottom: 8px; }
+  .voice-do { background: rgba(52,199,89,0.1); border-left: 3px solid var(--green); }
+  .voice-dont { background: rgba(255,59,48,0.1); border-left: 3px solid var(--red); }
+  .voice-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px; display: block; }
+  .voice-tag.do { color: var(--green); }
+  .voice-tag.dont { color: var(--red); }
+
+  /* ── 디자인 토큰 ── */
+  .tokens-table {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+  }
+  .tokens-table th {
+    text-align: left; padding: 12px 16px; font-weight: 600; font-size: 12px;
+    letter-spacing: 0.5px; text-transform: uppercase; color: var(--text2);
+    border-bottom: 1px solid var(--border);
+  }
+  .tokens-table td {
+    padding: 10px 16px; border-bottom: 1px solid var(--border);
+  }
+  .tokens-table td:first-child {
+    font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 13px; color: var(--blue);
+  }
+  .tokens-table td:nth-child(2) {
+    font-family: 'SF Mono', monospace; font-size: 13px;
+  }
+  .token-cat {
+    display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
+    background: rgba(0,122,255,0.1); color: var(--blue);
+  }
+
+  /* ── 카피 블록 ── */
+  .copy-block {
+    padding: 32px; border-radius: 16px; background: var(--bg2); margin-bottom: 24px;
+  }
+  .copy-type { font-size: 11px; font-weight: 600; color: var(--yellow); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .copy-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+  .copy-body { font-size: 15px; color: var(--text2); line-height: 1.8; white-space: pre-line; }
+
+  /* ── 클로징 ── */
+  .closing {
+    text-align: center; padding: 120px 24px;
+    position: relative; overflow: hidden;
+  }
+  .closing::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,214,10,0.06) 0%, transparent 60%);
+  }
+  .closing-text {
+    font-size: clamp(20px, 3vw, 28px); font-weight: 500;
+    line-height: 1.6; max-width: 640px; margin: 0 auto;
+    position: relative; color: var(--text2);
+  }
+  .closing-brand {
+    display: block; color: var(--text); font-weight: 600; margin-top: 16px;
+  }
+
+  /* ── 푸터 ── */
+  footer {
+    text-align: center; padding: 32px; font-size: 13px; color: var(--text2);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── 모바일 ── */
+  @media (max-width: 768px) {
+    section { padding: 48px 16px; }
+    .section-title { font-size: 26px; margin-bottom: 32px; }
+    .principle-item { flex-direction: column; gap: 12px; }
+    .principle-num { font-size: 32px; min-width: auto; text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" title="테마 전환">
+  <span id="themeIcon">☀️</span>
+</button>
+
+<!-- ── 히어로 ── -->
+<div class="hero">
+  <div class="hero-brand">Brand Identity Guide</div>
+  <h1>URS<span class="highlight">x</span>Claw</h1>
+  <p class="tagline">반복은 맡기고, 당신은 살아가세요.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── About ── -->
+<section>
+  <div class="section-label">About Us</div>
+  <h2 class="section-title">우리는 한 가지 질문에서 시작했습니다.</h2>
+  <div class="about-text">
+    <p class="opening">"매일 같은 일을 반복하면서, 정작 중요한 일에 쓸 시간은 왜 늘 부족할까?"</p>
+    <p style="margin-top: 16px;">
+      차트를 들여다보고, 뉴스를 훑고, 데이터를 정리하고, 알림을 확인하는 일.
+      하나하나는 사소하지만, 쌓이면 하루를 통째로 잡아먹습니다.
+      URSxClaw는 이 반복의 무게를 기술로 덜어드립니다.
+    </p>
+    <p style="margin-top: 16px;">
+      투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이,
+      일상에서는 정보를 수집하고 정리하고 알려주는 자동화 시스템이 여러분 대신 일합니다.
+      24시간, 쉬지 않고, 흔들리지 않고.
+    </p>
+    <p style="margin-top: 16px;">
+      복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요.
+      나머지는 저희가 알아서 합니다.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 서비스 ── -->
+<section>
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">URSxClaw가 하는 일</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <div class="service-name">자동 투자</div>
+      <div class="service-headline">잠든 사이에도, 일하는 동안에도.</div>
+      <div class="service-desc">검증된 전략 기반의 트레이딩 봇이 시장을 모니터링하고, 정해진 규칙에 따라 매매합니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <div class="service-name">일상 자동화</div>
+      <div class="service-headline">반복 작업을 시스템이 대신합니다.</div>
+      <div class="service-desc">뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송. 매일 손으로 하던 반복 작업을 시스템이 대신합니다.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <div class="service-name">한눈에 보는 대시보드</div>
+      <div class="service-headline">지금 필요한 정보만.</div>
+      <div class="service-desc">내 자산과 자동화 현황을 깔끔한 화면 하나로 확인합니다. 복잡한 지표 대신, 지금 필요한 정보만.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 원칙 ── -->
+<section>
+  <div class="section-label">Principles</div>
+  <h2 class="section-title">우리의 원칙</h2>
+  <div class="principles-list">
+    <div class="principle-item">
+      <div class="principle-num">01</div>
+      <div>
+        <div class="principle-title">원칙이 감정을 이긴다</div>
+        <div class="principle-desc">시장이 흔들려도 봇은 흔들리지 않습니다. 미리 세운 규칙이 매 순간의 판단을 대신합니다.</div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">02</div>
+      <div>
+        <div class="principle-title">반복은 기계의 몫이다</div>
+        <div class="principle-desc">사람은 판단하고 결정하는 일에 집중해야 합니다. 단순 반복은 시스템에게 넘기세요.</div>
+      </div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-num">03</div>
+      <div>
+        <div class="principle-title">쉬워야 쓸 수 있다</div>
+        <div class="principle-desc">기술은 복잡해도 경험은 단순해야 합니다. 결과가 눈에 바로 들어오는 것, 그게 우리의 기준입니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 컬러 팔레트 ── -->
+<section>
+  <div class="section-label">Color Palette</div>
+  <h2 class="section-title">컬러 시스템</h2>
+
+  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">브랜드 컬러</h3>
+  <div class="palette-grid" style="margin-bottom: 48px;">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #007AFF;"></div>
+      <div class="color-info">
+        <div class="color-name">URSx Blue</div>
+        <div class="color-hex">#007AFF</div>
+        <div class="color-role">주 강조색</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #5E5CE6;"></div>
+      <div class="color-info">
+        <div class="color-name">Neon Violet</div>
+        <div class="color-hex">#5E5CE6</div>
+        <div class="color-role">보조 강조색</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FFD60A;"></div>
+      <div class="color-info">
+        <div class="color-name">Nano Yellow</div>
+        <div class="color-hex">#FFD60A</div>
+        <div class="color-role">나노바나나 시그니처</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">시맨틱 컬러</h3>
+  <div class="palette-grid" style="margin-bottom: 48px;">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #34C759;"></div>
+      <div class="color-info">
+        <div class="color-name">Success Green</div>
+        <div class="color-hex">#34C759</div>
+        <div class="color-role">성공 / 수익</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FF3B30;"></div>
+      <div class="color-info">
+        <div class="color-name">Alert Red</div>
+        <div class="color-hex">#FF3B30</div>
+        <div class="color-role">경고 / 손실</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FF9500;"></div>
+      <div class="color-info">
+        <div class="color-name">Caution Orange</div>
+        <div class="color-hex">#FF9500</div>
+        <div class="color-role">주의</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #5AC8FA;"></div>
+      <div class="color-info">
+        <div class="color-name">Info Cyan</div>
+        <div class="color-hex">#5AC8FA</div>
+        <div class="color-role">정보 / 안내</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 20px;">배경 (라이트 / 다크)</h3>
+  <div class="palette-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FFFFFF; border-bottom: 1px solid #eee;"></div>
+      <div class="color-info">
+        <div class="color-name">Pure White</div>
+        <div class="color-hex">#FFFFFF</div>
+        <div class="color-role">라이트 배경</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #F5F5F7;"></div>
+      <div class="color-info">
+        <div class="color-name">Cloud Gray</div>
+        <div class="color-hex">#F5F5F7</div>
+        <div class="color-role">라이트 보조 배경</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #000000;"></div>
+      <div class="color-info">
+        <div class="color-name">Deep Black</div>
+        <div class="color-hex">#000000</div>
+        <div class="color-role">다크 배경</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #1C1C1E;"></div>
+      <div class="color-info">
+        <div class="color-name">Charcoal</div>
+        <div class="color-hex">#1C1C1E</div>
+        <div class="color-role">다크 보조 배경</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 타이포그래피 ── -->
+<section>
+  <div class="section-label">Typography</div>
+  <h2 class="section-title">타이포그래피 시스템</h2>
+
+  <div class="type-specimen">
+    <div class="type-label">Display — H1</div>
+    <div style="font-size: 48px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.2;">반복은 맡기고, 당신은 살아가세요.</div>
+    <div class="type-meta">48px / 700 / -0.5px / 1.2</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Heading — H2</div>
+    <div style="font-size: 34px; font-weight: 600; letter-spacing: -0.3px; line-height: 1.25;">URSxClaw가 하는 일</div>
+    <div class="type-meta">34px / 600 / -0.3px / 1.25</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Subheading — H3</div>
+    <div style="font-size: 24px; font-weight: 600; letter-spacing: -0.2px; line-height: 1.3;">원칙이 감정을 이긴다</div>
+    <div class="type-meta">24px / 600 / -0.2px / 1.3</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Body Large</div>
+    <div style="font-size: 17px; font-weight: 400; line-height: 1.6;">검증된 전략 기반의 트레이딩 봇이 시장을 모니터링하고, 정해진 규칙에 따라 매매합니다. 잠든 사이에도, 일하는 동안에도.</div>
+    <div class="type-meta">17px / 400 / 0px / 1.6</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Body</div>
+    <div style="font-size: 15px; font-weight: 400; line-height: 1.6;">복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요. 나머지는 저희가 알아서 합니다.</div>
+    <div class="type-meta">15px / 400 / 0px / 1.6</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Mono / Data</div>
+    <div style="font-size: 14px; font-family: 'SF Mono', 'JetBrains Mono', monospace; line-height: 1.5;">+12.4% | $1,234.56 | 2026-03-26 14:30</div>
+    <div class="type-meta">SF Mono / JetBrains Mono / 14px / 400</div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-label">Button / Tag</div>
+    <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+      <button style="background: #007AFF; color: white; border: none; padding: 10px 24px; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px;">시작하기</button>
+      <button style="background: transparent; color: #007AFF; border: 1.5px solid #007AFF; padding: 10px 24px; border-radius: 12px; font-size: 15px; font-weight: 600; cursor: pointer;">자세히 보기</button>
+      <span style="background: rgba(255,214,10,0.15); color: #FFD60A; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px;">나노바나나</span>
+      <span style="background: rgba(52,199,89,0.12); color: #34C759; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;">활성</span>
+    </div>
+    <div class="type-meta">Button: 15px / 600 / 0.5px &nbsp; Tag: 11px / 600 / 0.5px</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 보이스 & 톤 ── -->
+<section>
+  <div class="section-label">Voice & Tone</div>
+  <h2 class="section-title">보이스 & 톤 가이드</h2>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-attr">담백함</div>
+      <div class="voice-desc">과장하지 않는다. 있는 그대로, 필요한 만큼만 말한다.</div>
+      <div class="voice-example voice-do">
+        <span class="voice-tag do">DO</span>
+        검증된 전략 기반으로 매매합니다.
+      </div>
+      <div class="voice-example voice-dont">
+        <span class="voice-tag dont">DON'T</span>
+        혁신적인 AI가 당신의 투자를 완전히 바꿔놓습니다!
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-attr">세련됨</div>
+      <div class="voice-desc">군더더기 없이 깔끔하다. 문장은 짧고 리듬감이 있다.</div>
+      <div class="voice-example voice-do">
+        <span class="voice-tag do">DO</span>
+        24시간, 쉬지 않고, 흔들리지 않고.
+      </div>
+      <div class="voice-example voice-dont">
+        <span class="voice-tag dont">DON'T</span>
+        저희 시스템은 24시간 365일 끊김 없이 안정적으로 가동됩니다.
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-attr">존중</div>
+      <div class="voice-desc">사용자를 가르치지 않는다. '쉬운', '간단한' 같은 평가 표현을 쓰지 않는다.</div>
+      <div class="voice-example voice-do">
+        <span class="voice-tag do">DO</span>
+        결과만 확인하세요. 나머지는 저희가 알아서 합니다.
+      </div>
+      <div class="voice-example voice-dont">
+        <span class="voice-tag dont">DON'T</span>
+        초등학생도 이해할 수 있는 쉬운 인터페이스!
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-attr">신뢰감</div>
+      <div class="voice-desc">기술적 근거를 보여주되, 용어를 나열하지 않는다.</div>
+      <div class="voice-example voice-do">
+        <span class="voice-tag do">DO</span>
+        정해진 규칙에 따라 매매합니다.
+      </div>
+      <div class="voice-example voice-dont">
+        <span class="voice-tag dont">DON'T</span>
+        최첨단 알고리즘과 머신러닝 기술을 활용하여...
+      </div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-attr">직접적</div>
+      <div class="voice-desc">비유, 은유 없이 실제 기능과 결과로 말한다.</div>
+      <div class="voice-example voice-do">
+        <span class="voice-tag do">DO</span>
+        뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송.
+      </div>
+      <div class="voice-example voice-dont">
+        <span class="voice-tag dont">DON'T</span>
+        마치 당신의 개인 비서처럼, 든든한 조력자가...
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 글라스모피즘 데모 ── -->
+<section>
+  <div class="section-label">Material</div>
+  <h2 class="section-title">글라스모피즘 소재감</h2>
+  <div style="position: relative; padding: 80px 40px; border-radius: 24px; overflow: hidden;
+    background: linear-gradient(135deg, #007AFF 0%, #5E5CE6 50%, #FFD60A 100%);">
+    <div style="position: absolute; top: 30px; left: 30px; width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); filter: blur(40px);"></div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; position: relative;">
+      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;">
+        <div style="font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px;">총 자산</div>
+        <div style="font-size: 32px; font-weight: 700; font-family: 'SF Mono', monospace;">₩12,345,678</div>
+        <div style="font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7);">+2.4% 오늘</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;">
+        <div style="font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px;">활성 봇</div>
+        <div style="font-size: 32px; font-weight: 700;">6<span style="font-size: 16px; opacity: 0.7;"> / 6</span></div>
+        <div style="font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7);">모두 정상 가동 중</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 24px; color: white;">
+        <div style="font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 8px;">오늘 매매</div>
+        <div style="font-size: 32px; font-weight: 700;">14<span style="font-size: 16px; opacity: 0.7;"> 건</span></div>
+        <div style="font-size: 14px; margin-top: 8px; color: rgba(255,255,255,0.7);">승률 78.6%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── 클로징 ── -->
+<div class="closing">
+  <div class="closing-text">
+    당신의 시간은 차트 앞에 묶여 있을 만큼 가볍지 않습니다.
+    <span class="closing-brand">URSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.</span>
+  </div>
+</div>
+
+<footer>
+  URSxClaw Brand Identity DB v1.0 — 나노바나나 스타일 · 2026
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const icon = document.getElementById('themeIcon');
+  if (html.getAttribute('data-theme') === 'dark') {
+    html.setAttribute('data-theme', 'light');
+    icon.textContent = '🌙';
+  } else {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '☀️';
+  }
+}
+</script>
+</body>
+</html>
