@@ -14,6 +14,20 @@
   --color-text-primary: #1D1D1F;  /* Ink Black — 본문 텍스트 (라이트) */
   --color-text-secondary: #86868B;  /* Dim Gray — 보조 텍스트, 캡션 (라이트) */
   --color-border: #D1D1D6;  /* Light Border — 구분선, 보더 (라이트) */
+  --color-symbol: #54CDA5;  /* Claw Mint */
+  --color-background: #FFFFFF;  /* Pure White — 주 배경 (라이트) */
+  --color-background-secondary: #F5F5F7;  /* Cloud Gray — 보조 배경, 카드 (라이트) */
+  --color-background-tertiary: #F2F2F7;  /* Warm Gray — 섹션 배경 (라이트) */
+  --color-primary: #007AFF;  /* URSx Blue */
+  --color-secondary: #5E5CE6;  /* Neon Violet */
+  --color-accent: #FFD60A;  /* Nano Yellow */
+  --color-semantic-success: #34C759;  /* Success Green */
+  --color-semantic-danger: #FF3B30;  /* Alert Red */
+  --color-semantic-warning: #FF9500;  /* Caution Orange */
+  --color-semantic-info: #5AC8FA;  /* Info Cyan */
+  --color-text-primary: #1D1D1F;  /* Ink Black — 본문 텍스트 (라이트) */
+  --color-text-secondary: #86868B;  /* Dim Gray — 보조 텍스트, 캡션 (라이트) */
+  --color-border: #D1D1D6;  /* Light Border — 구분선, 보더 (라이트) */
 
   /* 디자인 토큰 */
   --spacing-xs: 4px;  /* 최소 간격 */
@@ -45,6 +59,20 @@
 }
 
 [data-theme='dark'] {
+  --color-background: #000000;  /* Deep Black — 주 배경 (다크) */
+  --color-background-secondary: #1C1C1E;  /* Charcoal — 카드/섹션 배경 (다크) */
+  --color-background-tertiary: #2C2C2E;  /* Dark Gray — 입력 필드, 보조 요소 (다크) */
+  --color-primary: #007AFF;  /* URSx Blue */
+  --color-secondary: #5E5CE6;  /* Neon Violet */
+  --color-accent: #FFD60A;  /* Nano Yellow */
+  --color-semantic-success: #34C759;  /* Success Green */
+  --color-semantic-danger: #FF3B30;  /* Alert Red */
+  --color-semantic-warning: #FF9500;  /* Caution Orange */
+  --color-semantic-info: #5AC8FA;  /* Info Cyan */
+  --color-text-primary: #F5F5F7;  /* Snow White — 본문 텍스트 (다크) */
+  --color-text-secondary: #98989D;  /* Ash Gray — 보조 텍스트, 캡션 (다크) */
+  --color-border: #38383A;  /* Dark Border — 구분선, 보더 (다크) */
+  --color-symbol: #54CDA5;  /* Claw Mint */
   --color-background: #000000;  /* Deep Black — 주 배경 (다크) */
   --color-background-secondary: #1C1C1E;  /* Charcoal — 카드/섹션 배경 (다크) */
   --color-background-tertiary: #2C2C2E;  /* Dark Gray — 입력 필드, 보조 요소 (다크) */

@@ -1,100 +1,112 @@
 {
   "brand_core": [
     {
+      "key": "symbol_color",
+      "value": "#54CDA5",
+      "category": "identity",
+      "updated_at": "2026-03-26 06:12:48"
+    },
+    {
+      "key": "symbol_desc",
+      "value": "회로 기판 패턴 + 클로(발톱) 형상 결합. 기술 자동화 브랜드 정체성 표현.",
+      "category": "identity",
+      "updated_at": "2026-03-26 06:12:48"
+    },
+    {
       "key": "brand_name",
       "value": "URSxClaw",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "brand_name_kr",
       "value": "유알에스 클로",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "tagline",
       "value": "반복은 맡기고, 당신은 살아가세요.",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "tagline_en",
       "value": "Delegate the routine. Live your life.",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "one_liner",
       "value": "URSxClaw는 투자부터 일상의 반복 업무까지, 사람이 하지 않아도 되는 일을 자동화하는 기술 브랜드입니다.",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "domain",
       "value": "ursxclaw.com",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "founder",
       "value": "나노바나나",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "founded_year",
       "value": "2026",
       "category": "general",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "keywords",
       "value": "자동화, 투자봇, 반복업무, 트레이딩, 대시보드, 기술브랜드",
       "category": "identity",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "personality",
       "value": "담백한, 세련된, 신뢰감, 기술적, 미니멀",
       "category": "identity",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "target_audience",
       "value": "시간이 부족한 투자자, 반복 업무에 지친 직장인, 기술 기반 자동화를 원하는 사람",
       "category": "identity",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "style_signature",
       "value": "나노바나나",
       "category": "identity",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "style_desc",
       "value": "비유 없이 팩트만. 자존감 건드리는 표현 금지. 있는 그대로 보여주되, 담백하고 세련된 톤.",
       "category": "identity",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "copy_policy_no_metaphor",
       "value": "비유 사용 금지 — 직접적이고 명확한 표현만",
       "category": "policy",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "copy_policy_no_condescend",
       "value": "'초등학생도 이해하는', '누구나 쉽게' 같은 자존감 건드리는 표현 금지",
       "category": "policy",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "copy_policy_tone",
       "value": "담백하고 세련된 톤. 과장 금지. 실제 하는 일을 있는 그대로 설명.",
       "category": "policy",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "colors": [
@@ -287,6 +299,206 @@
       "theme": "dark",
       "role": "border",
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 20,
+      "name": "Claw Mint",
+      "hex": "#54CDA5",
+      "rgb": "84,205,165",
+      "usage": "심볼 전용 색상 — 로고, 아이콘",
+      "theme": "both",
+      "role": "symbol",
+      "updated_at": "2026-03-26 06:12:48"
+    },
+    {
+      "id": 21,
+      "name": "Pure White",
+      "hex": "#FFFFFF",
+      "rgb": "255,255,255",
+      "usage": "주 배경 (라이트)",
+      "theme": "light",
+      "role": "background",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 22,
+      "name": "Cloud Gray",
+      "hex": "#F5F5F7",
+      "rgb": "245,245,247",
+      "usage": "보조 배경, 카드 (라이트)",
+      "theme": "light",
+      "role": "background-secondary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 23,
+      "name": "Warm Gray",
+      "hex": "#F2F2F7",
+      "rgb": "242,242,247",
+      "usage": "섹션 배경 (라이트)",
+      "theme": "light",
+      "role": "background-tertiary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 24,
+      "name": "Deep Black",
+      "hex": "#000000",
+      "rgb": "0,0,0",
+      "usage": "주 배경 (다크)",
+      "theme": "dark",
+      "role": "background",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 25,
+      "name": "Charcoal",
+      "hex": "#1C1C1E",
+      "rgb": "28,28,30",
+      "usage": "카드/섹션 배경 (다크)",
+      "theme": "dark",
+      "role": "background-secondary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 26,
+      "name": "Dark Gray",
+      "hex": "#2C2C2E",
+      "rgb": "44,44,46",
+      "usage": "입력 필드, 보조 요소 (다크)",
+      "theme": "dark",
+      "role": "background-tertiary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 27,
+      "name": "URSx Blue",
+      "hex": "#007AFF",
+      "rgb": "0,122,255",
+      "usage": "주 강조색 — CTA, 링크, 주요 버튼",
+      "theme": "both",
+      "role": "primary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 28,
+      "name": "Neon Violet",
+      "hex": "#5E5CE6",
+      "rgb": "94,92,230",
+      "usage": "보조 강조색 — 다크모드 포인트, 그래프",
+      "theme": "both",
+      "role": "secondary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 29,
+      "name": "Nano Yellow",
+      "hex": "#FFD60A",
+      "rgb": "255,214,10",
+      "usage": "나노바나나 시그니처 — 하이라이트, 배지, 강조점",
+      "theme": "both",
+      "role": "accent",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 30,
+      "name": "Success Green",
+      "hex": "#34C759",
+      "rgb": "52,199,89",
+      "usage": "성공, 수익, 긍정 지표",
+      "theme": "both",
+      "role": "semantic-success",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 31,
+      "name": "Alert Red",
+      "hex": "#FF3B30",
+      "rgb": "255,59,48",
+      "usage": "경고, 손실, 에러",
+      "theme": "both",
+      "role": "semantic-danger",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 32,
+      "name": "Caution Orange",
+      "hex": "#FF9500",
+      "rgb": "255,149,0",
+      "usage": "주의, 보류, 경고 (중간)",
+      "theme": "both",
+      "role": "semantic-warning",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 33,
+      "name": "Info Cyan",
+      "hex": "#5AC8FA",
+      "rgb": "90,200,250",
+      "usage": "정보, 안내, 중립 알림",
+      "theme": "both",
+      "role": "semantic-info",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 34,
+      "name": "Ink Black",
+      "hex": "#1D1D1F",
+      "rgb": "29,29,31",
+      "usage": "본문 텍스트 (라이트)",
+      "theme": "light",
+      "role": "text-primary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 35,
+      "name": "Dim Gray",
+      "hex": "#86868B",
+      "rgb": "134,134,139",
+      "usage": "보조 텍스트, 캡션 (라이트)",
+      "theme": "light",
+      "role": "text-secondary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 36,
+      "name": "Snow White",
+      "hex": "#F5F5F7",
+      "rgb": "245,245,247",
+      "usage": "본문 텍스트 (다크)",
+      "theme": "dark",
+      "role": "text-primary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 37,
+      "name": "Ash Gray",
+      "hex": "#98989D",
+      "rgb": "152,152,157",
+      "usage": "보조 텍스트, 캡션 (다크)",
+      "theme": "dark",
+      "role": "text-secondary",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 38,
+      "name": "Light Border",
+      "hex": "#D1D1D6",
+      "rgb": "209,209,214",
+      "usage": "구분선, 보더 (라이트)",
+      "theme": "light",
+      "role": "border",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 39,
+      "name": "Dark Border",
+      "hex": "#38383A",
+      "rgb": "56,56,58",
+      "usage": "구분선, 보더 (다크)",
+      "theme": "dark",
+      "role": "border",
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "typography": [
@@ -388,6 +600,105 @@
       "letter_spacing": "0.5px",
       "usage": "태그, 배지, 라벨",
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 10,
+      "element": "Display (H1)",
+      "font_family": "-apple-system, 'SF Pro Display', 'Pretendard', sans-serif",
+      "font_size": "48px",
+      "font_weight": "700",
+      "line_height": "1.2",
+      "letter_spacing": "-0.5px",
+      "usage": "히어로 섹션, 메인 타이틀",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 11,
+      "element": "Heading (H2)",
+      "font_family": "-apple-system, 'SF Pro Display', 'Pretendard', sans-serif",
+      "font_size": "34px",
+      "font_weight": "600",
+      "line_height": "1.25",
+      "letter_spacing": "-0.3px",
+      "usage": "섹션 제목",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 12,
+      "element": "Subheading (H3)",
+      "font_family": "-apple-system, 'SF Pro Text', 'Pretendard', sans-serif",
+      "font_size": "24px",
+      "font_weight": "600",
+      "line_height": "1.3",
+      "letter_spacing": "-0.2px",
+      "usage": "카드 제목, 소제목",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 13,
+      "element": "Body Large",
+      "font_family": "-apple-system, 'SF Pro Text', 'Pretendard', sans-serif",
+      "font_size": "17px",
+      "font_weight": "400",
+      "line_height": "1.6",
+      "letter_spacing": "0px",
+      "usage": "본문 (강조)",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 14,
+      "element": "Body",
+      "font_family": "-apple-system, 'SF Pro Text', 'Pretendard', sans-serif",
+      "font_size": "15px",
+      "font_weight": "400",
+      "line_height": "1.6",
+      "letter_spacing": "0px",
+      "usage": "기본 본문",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 15,
+      "element": "Caption",
+      "font_family": "-apple-system, 'SF Pro Text', 'Pretendard', sans-serif",
+      "font_size": "13px",
+      "font_weight": "400",
+      "line_height": "1.4",
+      "letter_spacing": "0px",
+      "usage": "보조 텍스트, 타임스탬프",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 16,
+      "element": "Mono",
+      "font_family": "'SF Mono', 'JetBrains Mono', 'D2Coding', monospace",
+      "font_size": "14px",
+      "font_weight": "400",
+      "line_height": "1.5",
+      "letter_spacing": "0px",
+      "usage": "코드, 데이터 수치",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 17,
+      "element": "Button",
+      "font_family": "-apple-system, 'SF Pro Text', 'Pretendard', sans-serif",
+      "font_size": "15px",
+      "font_weight": "600",
+      "line_height": "1.0",
+      "letter_spacing": "0.5px",
+      "usage": "버튼 텍스트",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 18,
+      "element": "Tag/Badge",
+      "font_family": "-apple-system, 'SF Pro Text', 'Pretendard', sans-serif",
+      "font_size": "11px",
+      "font_weight": "600",
+      "line_height": "1.0",
+      "letter_spacing": "0.5px",
+      "usage": "태그, 배지, 라벨",
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "copy_blocks": [
@@ -426,6 +737,42 @@
       "sort_order": 99,
       "lang": "ko",
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 5,
+      "block_type": "tagline",
+      "title": null,
+      "body": "반복은 맡기고, 당신은 살아가세요.",
+      "sort_order": 1,
+      "lang": "ko",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 6,
+      "block_type": "intro",
+      "title": "브랜드 한 줄 소개",
+      "body": "URSxClaw는 투자부터 일상의 반복 업무까지, 사람이 하지 않아도 되는 일을 자동화하는 기술 브랜드입니다.",
+      "sort_order": 2,
+      "lang": "ko",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 7,
+      "block_type": "about",
+      "title": "About Us",
+      "body": "우리는 한 가지 질문에서 시작했습니다.\n\"매일 같은 일을 반복하면서, 정작 중요한 일에 쓸 시간은 왜 늘 부족할까?\"\n차트를 들여다보고, 뉴스를 훑고, 데이터를 정리하고, 알림을 확인하는 일. 하나하나는 사소하지만, 쌓이면 하루를 통째로 잡아먹습니다. URSxClaw는 이 반복의 무게를 기술로 덜어드립니다.\n투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이, 일상에서는 정보를 수집하고 정리하고 알려주는 자동화 시스템이 여러분 대신 일합니다. 24시간, 쉬지 않고, 흔들리지 않고.\n복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요. 나머지는 저희가 알아서 합니다.",
+      "sort_order": 3,
+      "lang": "ko",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 8,
+      "block_type": "closing",
+      "title": "클로징",
+      "body": "당신의 시간은 차트 앞에 묶여 있을 만큼 가볍지 않습니다.\nURSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.",
+      "sort_order": 99,
+      "lang": "ko",
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "voice_tone": [
@@ -468,6 +815,46 @@
       "do_example": "뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송.",
       "dont_example": "마치 당신의 개인 비서처럼, 든든한 조력자가...",
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 6,
+      "attribute": "담백함",
+      "description": "과장하지 않는다. 있는 그대로, 필요한 만큼만 말한다.",
+      "do_example": "검증된 전략 기반으로 매매합니다.",
+      "dont_example": "혁신적인 AI가 당신의 투자를 완전히 바꿔놓습니다!",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 7,
+      "attribute": "세련됨",
+      "description": "군더더기 없이 깔끔하다. 문장은 짧고 리듬감이 있다.",
+      "do_example": "24시간, 쉬지 않고, 흔들리지 않고.",
+      "dont_example": "저희 시스템은 24시간 365일 끊김 없이 안정적으로 가동됩니다.",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 8,
+      "attribute": "존중",
+      "description": "사용자를 가르치지 않는다. '쉬운', '간단한' 같은 평가 표현을 쓰지 않는다.",
+      "do_example": "결과만 확인하세요. 나머지는 저희가 알아서 합니다.",
+      "dont_example": "초등학생도 이해할 수 있는 쉬운 인터페이스!",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 9,
+      "attribute": "신뢰감",
+      "description": "기술적 근거를 보여주되, 용어를 나열하지 않는다.",
+      "do_example": "정해진 규칙에 따라 매매합니다.",
+      "dont_example": "최첨단 알고리즘과 머신러닝 기술을 활용하여...",
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 10,
+      "attribute": "직접적",
+      "description": "비유, 은유 없이 실제 기능과 결과로 말한다.",
+      "do_example": "뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송.",
+      "dont_example": "마치 당신의 개인 비서처럼, 든든한 조력자가...",
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "design_tokens": [
@@ -476,182 +863,182 @@
       "value": "4px",
       "category": "spacing",
       "description": "최소 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "spacing-sm",
       "value": "8px",
       "category": "spacing",
       "description": "작은 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "spacing-md",
       "value": "16px",
       "category": "spacing",
       "description": "기본 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "spacing-lg",
       "value": "24px",
       "category": "spacing",
       "description": "큰 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "spacing-xl",
       "value": "32px",
       "category": "spacing",
       "description": "섹션 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "spacing-2xl",
       "value": "48px",
       "category": "spacing",
       "description": "대형 섹션 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "spacing-3xl",
       "value": "64px",
       "category": "spacing",
       "description": "히어로/풋터 간격",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "radius-sm",
       "value": "8px",
       "category": "radius",
       "description": "작은 요소 (태그, 뱃지)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "radius-md",
       "value": "12px",
       "category": "radius",
       "description": "기본 요소 (버튼, 입력)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "radius-lg",
       "value": "16px",
       "category": "radius",
       "description": "카드, 모달",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "radius-xl",
       "value": "24px",
       "category": "radius",
       "description": "대형 카드, 히어로 영역",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "radius-full",
       "value": "9999px",
       "category": "radius",
       "description": "원형 (아바타, 아이콘)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "shadow-sm",
       "value": "0 1px 3px rgba(0,0,0,0.08)",
       "category": "shadow",
       "description": "미세한 띄움 (카드)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "shadow-md",
       "value": "0 4px 12px rgba(0,0,0,0.10)",
       "category": "shadow",
       "description": "기본 띄움 (드롭다운, 팝오버)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "shadow-lg",
       "value": "0 8px 30px rgba(0,0,0,0.12)",
       "category": "shadow",
       "description": "강한 띄움 (모달, 플로팅)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "shadow-glow-blue",
       "value": "0 0 20px rgba(0,122,255,0.25)",
       "category": "shadow",
       "description": "파란 글로우 (호버, 포커스)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "shadow-glow-yellow",
       "value": "0 0 20px rgba(255,214,10,0.30)",
       "category": "shadow",
       "description": "노란 글로우 (나노바나나 강조)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "glass-blur",
       "value": "20px",
       "category": "glass",
       "description": "배경 블러 강도",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "glass-bg-light",
       "value": "rgba(255,255,255,0.72)",
       "category": "glass",
       "description": "유리 배경 (라이트)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "glass-bg-dark",
       "value": "rgba(28,28,30,0.72)",
       "category": "glass",
       "description": "유리 배경 (다크)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "glass-border-light",
       "value": "1px solid rgba(255,255,255,0.18)",
       "category": "glass",
       "description": "유리 보더 (라이트)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "glass-border-dark",
       "value": "1px solid rgba(255,255,255,0.08)",
       "category": "glass",
       "description": "유리 보더 (다크)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "transition-fast",
       "value": "150ms ease-out",
       "category": "animation",
       "description": "빠른 전환 (호버, 토글)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "transition-normal",
       "value": "250ms ease-in-out",
       "category": "animation",
       "description": "기본 전환",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "transition-slow",
       "value": "400ms ease-in-out",
       "category": "animation",
       "description": "느린 전환 (모달, 페이지)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "transition-spring",
       "value": "500ms cubic-bezier(0.34, 1.56, 0.64, 1)",
       "category": "animation",
       "description": "스프링 (팝업, 강조)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "principles": [
@@ -675,6 +1062,27 @@
       "description": "기술은 복잡해도 경험은 단순해야 합니다. 결과가 눈에 바로 들어오는 것, 그게 우리의 기준입니다.",
       "sort_order": 3,
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 4,
+      "title": "원칙이 감정을 이긴다",
+      "description": "시장이 흔들려도 봇은 흔들리지 않습니다. 미리 세운 규칙이 매 순간의 판단을 대신합니다.",
+      "sort_order": 1,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 5,
+      "title": "반복은 기계의 몫이다",
+      "description": "사람은 판단하고 결정하는 일에 집중해야 합니다. 단순 반복은 시스템에게 넘기세요.",
+      "sort_order": 2,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 6,
+      "title": "쉬워야 쓸 수 있다",
+      "description": "기술은 복잡해도 경험은 단순해야 합니다. 결과가 눈에 바로 들어오는 것, 그게 우리의 기준입니다.",
+      "sort_order": 3,
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "services": [
@@ -704,66 +1112,112 @@
       "description": "내 자산과 자동화 현황을 깔끔한 화면 하나로 확인합니다. 복잡한 지표 대신, 지금 필요한 정보만.",
       "sort_order": 3,
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 4,
+      "name": "자동 투자",
+      "icon": "📈",
+      "headline": "잠든 사이에도, 일하는 동안에도.",
+      "description": "검증된 전략 기반의 트레이딩 봇이 시장을 모니터링하고, 정해진 규칙에 따라 매매합니다. 잠든 사이에도, 일하는 동안에도.",
+      "sort_order": 1,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 5,
+      "name": "일상 자동화",
+      "icon": "⚙️",
+      "headline": "반복 작업을 시스템이 대신합니다.",
+      "description": "뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송. 매일 손으로 하던 반복 작업을 시스템이 대신합니다.",
+      "sort_order": 2,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 6,
+      "name": "한눈에 보는 대시보드",
+      "icon": "📊",
+      "headline": "지금 필요한 정보만.",
+      "description": "내 자산과 자동화 현황을 깔끔한 화면 하나로 확인합니다. 복잡한 지표 대신, 지금 필요한 정보만.",
+      "sort_order": 3,
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
-  "assets": [],
+  "assets": [
+    {
+      "id": 1,
+      "name": "URSxClaw Symbol",
+      "file_path": "assets/symbol.png",
+      "asset_type": "logo",
+      "format": "PNG 1024x1024",
+      "description": "회로 클로 심볼 — 민트 그린 #54CDA5, 투명 배경",
+      "updated_at": "2026-03-26 06:12:48"
+    },
+    {
+      "id": 2,
+      "name": "URSxClaw Symbol (원본)",
+      "file_path": "assets/symbol_original.jpg",
+      "asset_type": "logo",
+      "format": "JPG 2346x1824",
+      "description": "원본 심볼 (Gemini 생성, 체커보드 배경)",
+      "updated_at": "2026-03-26 06:12:48"
+    }
+  ],
   "mission_vision": [
     {
       "key": "mission",
       "value": "사람이 하지 않아도 되는 일을 자동화해서, 사람이 해야 할 일에 집중할 시간을 돌려드립니다.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "vision",
       "value": "반복 업무 없는 세상. 기술이 일하고, 사람은 살아가는 세상.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "brand_promise",
       "value": "당신이 신경 쓰지 않아도 돌아가는 시스템을 만듭니다. 결과만 확인하세요.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "why_we_exist",
       "value": "매일 같은 일을 반복하느라 정작 중요한 일에 쓸 시간이 없는 사람들을 위해.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "archetype": [
     {
       "key": "primary_archetype",
       "value": "현자 (The Sage)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "primary_desc",
       "value": "지식과 원칙으로 움직인다. 감정에 흔들리지 않고, 데이터와 규칙이 판단한다. 과장하지 않고 있는 그대로 보여준다.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "secondary_archetype",
       "value": "창조자 (The Creator)",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "secondary_desc",
       "value": "복잡한 문제를 기술로 풀어낸다. 자동화 시스템을 설계하고 만들어서, 사람이 반복에서 벗어나게 한다.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "shadow",
       "value": "차갑거나 거만해 보일 수 있음 — '존중' 톤으로 균형. 기술을 내세우지 않고 결과로 보여준다.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "personality_keywords",
       "value": "담백한, 세련된, 신뢰감, 기술적, 미니멀",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "brand_voice_summary",
       "value": "과장 없이 사실만. 짧고 리듬감 있게. 사용자를 가르치지 않고, 결과로 말한다.",
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "brand_architecture": [
@@ -898,6 +1352,138 @@
       "status": "planned",
       "sort_order": 50,
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 12,
+      "level": "main",
+      "name": "URSxClaw",
+      "icon": "🐻",
+      "tagline": "반복은 맡기고, 당신은 살아가세요.",
+      "description": "메인 브랜드. 투자 자동화 + 일상 자동화를 아우르는 기술 브랜드 전체를 대표한다.",
+      "target": "전체 고객",
+      "status": "active",
+      "sort_order": 1,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 13,
+      "level": "sub_line",
+      "name": "URSx Trade",
+      "icon": "📈",
+      "tagline": "원칙이 감정을 이긴다.",
+      "description": "투자 자동화 라인. 트레이딩 봇, 백테스트, 포트폴리오 관리 등 금융 시장 자동매매 전반.",
+      "target": "투자자 — 시간이 없거나 감정 매매를 끊고 싶은 사람",
+      "status": "active",
+      "sort_order": 10,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 14,
+      "level": "sub_line",
+      "name": "URSx Auto",
+      "icon": "⚙️",
+      "tagline": "반복은 기계의 몫이다.",
+      "description": "일상 자동화 라인. 뉴스 수집, 데이터 정리, 리포트 생성, 알림 전송 등 비투자 자동화.",
+      "target": "반복 업무에 지친 직장인, 정보 수집이 일상인 사람",
+      "status": "active",
+      "sort_order": 20,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 15,
+      "level": "sub_line",
+      "name": "URSx View",
+      "icon": "📊",
+      "tagline": "지금 필요한 정보만.",
+      "description": "대시보드 / 시각화 라인. 자산 현황, 봇 상태, 자동화 결과를 한눈에 보여주는 인터페이스.",
+      "target": "전체 URSxClaw 사용자",
+      "status": "active",
+      "sort_order": 30,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 16,
+      "level": "product",
+      "name": "코인 매매봇",
+      "icon": "🪙",
+      "tagline": "24시간, 쉬지 않고.",
+      "description": "바이낸스 기반 DCA 코인 자동매매. 16종목 동시 운용, 규칙 기반 진입/청산.",
+      "target": "암호화폐 투자자",
+      "status": "active",
+      "sort_order": 11,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 17,
+      "level": "product",
+      "name": "글로벌 뉴스봇",
+      "icon": "🌍",
+      "tagline": "세상이 움직이면, 알려드립니다.",
+      "description": "전 세계 주요 뉴스를 실시간 수집, 요약, 텔레그램 전송. Gemini 기반 브리핑.",
+      "target": "글로벌 시장 관심자, 투자자",
+      "status": "active",
+      "sort_order": 21,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 18,
+      "level": "product",
+      "name": "메르 블로그봇",
+      "icon": "📝",
+      "tagline": "놓치면 안 되는 글, 알아서 잡습니다.",
+      "description": "메르 블로그 신규 포스팅 감지 → OneNote 자동 저장 + 텔레그램 알림.",
+      "target": "메르 블로그 구독자",
+      "status": "active",
+      "sort_order": 22,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 19,
+      "level": "product",
+      "name": "자산평가봇",
+      "icon": "💰",
+      "tagline": "내 자산, 숫자로 보여줍니다.",
+      "description": "은행/증권 자산을 OCR로 캡처, 엑셀 정리, 차트 시각화. 텔레그램 리포트.",
+      "target": "자산 관리가 필요한 개인 투자자",
+      "status": "active",
+      "sort_order": 31,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 20,
+      "level": "product",
+      "name": "스케줄봇",
+      "icon": "📅",
+      "tagline": "일정은 봇이 관리합니다.",
+      "description": "승무원 비행 스케줄 OCR 인식 → 구글 캘린더 자동 등록 + 달력 이미지 생성.",
+      "target": "승무원 가족",
+      "status": "active",
+      "sort_order": 23,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 21,
+      "level": "concept",
+      "name": "URSx Shield",
+      "icon": "🛡️",
+      "tagline": "지키는 것도 자동화.",
+      "description": "보안 모니터링, VPS 감시, 이상 탐지 자동화 라인. 현재 내부용으로 운용 중.",
+      "target": "인프라 관리자",
+      "status": "planned",
+      "sort_order": 40,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 22,
+      "level": "concept",
+      "name": "URSx Agent",
+      "icon": "🤖",
+      "tagline": "에이전트가 판단합니다.",
+      "description": "멀티 에이전트 AI 파이프라인. 여러 AI가 협업해서 복잡한 의사결정을 처리.",
+      "target": "고급 자동화가 필요한 사용자",
+      "status": "planned",
+      "sort_order": 50,
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "brand_story": [
@@ -906,28 +1492,28 @@
       "title": "시작",
       "body": "매일 같은 일을 반복하면서, 정작 중요한 일에 쓸 시간이 없었습니다.\n차트를 들여다보고, 뉴스를 훑고, 데이터를 정리하고, 알림을 확인하는 일. 하나하나는 사소하지만 쌓이면 하루를 통째로 잡아먹었습니다.\n그래서 직접 만들기 시작했습니다. 반복을 맡길 수 있는 시스템을.",
       "sort_order": 1,
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "turning_point",
       "title": "전환점",
       "body": "처음에는 나 하나 편하자고 만든 봇이었습니다.\n그런데 봇이 24시간 일하는 동안, 저는 처음으로 차트 앞에서 벗어나 다른 일을 할 수 있었습니다.\n이건 나만의 문제가 아니라는 걸 깨달았습니다.",
       "sort_order": 2,
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "now",
       "title": "지금",
       "body": "투자 시장에서는 감정 없이 원칙대로 움직이는 트레이딩 봇이, 일상에서는 정보를 수집하고 정리하고 알려주는 자동화 시스템이 일합니다.\n24시간, 쉬지 않고, 흔들리지 않고.\n복잡한 기술을 이해할 필요는 없습니다. 결과만 확인하세요.",
       "sort_order": 3,
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     },
     {
       "key": "manifesto",
       "title": "선언",
       "body": "우리는 기술을 자랑하지 않습니다.\n우리는 결과를 보여줍니다.\n당신의 시간은 차트 앞에 묶여 있을 만큼 가볍지 않습니다.\nURSxClaw가 일하는 동안, 당신은 당신의 하루를 사세요.",
       "sort_order": 4,
-      "updated_at": "2026-03-26 06:00:13"
+      "updated_at": "2026-04-06 15:44:18"
     }
   ],
   "customer_persona": [
@@ -966,6 +1552,42 @@
       "how_we_help": "스케줄봇, 자산평가봇 등이 수작업을 대체.",
       "sort_order": 3,
       "updated_at": "2026-03-26 06:00:13"
+    },
+    {
+      "id": 4,
+      "name": "바쁜 직장인 투자자",
+      "age_range": "30~45",
+      "occupation": "직장인 (IT/금융/전문직)",
+      "pain_point": "퇴근 후 차트 볼 시간이 없어서 기회를 놓침. 감정 매매로 손실 경험.",
+      "desire": "신경 안 써도 원칙대로 돌아가는 투자 시스템",
+      "behavior": "출퇴근 시 텔레그램으로 결과 확인, 주말에 설정 조정",
+      "how_we_help": "코인 매매봇이 24시간 규칙 기반 매매. 텔레그램으로 결과만 받아보면 됨.",
+      "sort_order": 1,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 5,
+      "name": "정보 과부하 투자자",
+      "age_range": "25~50",
+      "occupation": "개인 투자자 / 트레이더",
+      "pain_point": "뉴스, 블로그, 시세를 매일 수동으로 확인하느라 시간 소모. 중요한 정보를 놓칠까 불안.",
+      "desire": "중요한 정보만 알아서 걸러서 알려주는 시스템",
+      "behavior": "아침에 브리핑 확인, 속보 실시간 알림 수신",
+      "how_we_help": "글로벌 뉴스봇 + 메르 블로그봇이 자동 수집·요약·알림.",
+      "sort_order": 2,
+      "updated_at": "2026-04-06 15:44:18"
+    },
+    {
+      "id": 6,
+      "name": "반복 업무에 지친 사람",
+      "age_range": "25~40",
+      "occupation": "사무직 / 프리랜서",
+      "pain_point": "매일 같은 데이터 정리, 리포트 작성, 일정 관리를 수작업으로 처리.",
+      "desire": "반복 작업을 자동화해서 창의적인 일에 집중하고 싶음",
+      "behavior": "자동화된 리포트 확인, 일정 알림 수신",
+      "how_we_help": "스케줄봇, 자산평가봇 등이 수작업을 대체.",
+      "sort_order": 3,
+      "updated_at": "2026-04-06 15:44:18"
     }
   ]
 }
